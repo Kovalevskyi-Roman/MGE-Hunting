@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqdkrb1msrh8m"]
+
+[ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base_enemy.tscn" id="1_128ih"]
+[ext_resource type="Texture2D" uid="uid://d218o7m6a08ly" path="res://icon.svg" id="2_lrmch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_128ih"]
+size = Vector2(112, 114)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrmch"]
+size = Vector2(110, 114)
+
+[node name="TestEnemy" instance=ExtResource("1_128ih")]
+
+[node name="Sprite2D" parent="." index="0"]
+modulate = Color(0.9619985, 0.36223704, 0.21072659, 1)
+texture = ExtResource("2_lrmch")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("RectangleShape2D_128ih")
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_lrmch")

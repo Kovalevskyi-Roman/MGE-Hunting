@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbher3l5w80uh"]
+
+[ext_resource type="Script" uid="uid://bupo46k4llvcl" path="res://Scene/Player/player.gd" id="1_67a6e"]
+[ext_resource type="Texture2D" uid="uid://d218o7m6a08ly" path="res://icon.svg" id="2_yic5t"]
+[ext_resource type="PackedScene" uid="uid://dc8tbgvb7728y" path="res://Scene/Weapons/weapon.tscn" id="3_uuj77"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yic5t"]
+size = Vector2(120, 124)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_67a6e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_yic5t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yic5t")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Weapon" parent="." instance=ExtResource("3_uuj77")]
+position = Vector2(70, 27)
+
+[node name="ShotTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(71, 103)
+
+[connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]
