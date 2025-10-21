@@ -36,6 +36,6 @@ func chase():
 	velocity = speed * direction	
 	
 func die():
-	anim.play("death")
-	await anim.animation_finished
+	#anim.play("die")
+	#await anim.animation_finished
 	queue_free()

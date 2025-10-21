@@ -10,14 +10,18 @@ size = Vector2(112, 114)
 size = Vector2(110, 114)
 
 [node name="TestEnemy" instance=ExtResource("1_128ih")]
+collision_mask = 11
 
 [node name="Sprite2D2" type="Sprite2D" parent="." index="0"]
 modulate = Color(0.94959277, 0.33152103, 0.31557244, 1)
 texture = ExtResource("2_lrmch")
 
+[node name="Area2D" parent="." index="1"]
+collision_mask = 10
+
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("RectangleShape2D_128ih")
 
-[node name="CollisionShape2D" parent="." index="3" groups=["Enemies"]]
+[node name="CollisionShape2D" parent="." index="2" groups=["Enemies"]]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_lrmch")
