@@ -10,6 +10,6 @@ func create_bullet(rotation_player):
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "TestEnemy":
+	if body.is_in_group("Enemies"):
 		body.hp -= 10
 	queue_free()
