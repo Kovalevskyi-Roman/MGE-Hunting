@@ -10,7 +10,6 @@ radius = 55.29725
 radius = 38.259224
 
 [node name="MGE Soldat" instance=ExtResource("1_128ih")]
-scale = Vector2(1, 1)
 
 [node name="Sprite2D" parent="." index="2"]
 scale = Vector2(0.12162162, 0.12162162)

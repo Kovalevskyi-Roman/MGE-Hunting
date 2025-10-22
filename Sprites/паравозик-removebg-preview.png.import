@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbf4eeqitcv7c"
-path="res://.godot/imported/паравозик-removebg-preview.png-c95c7967d19b7776c5e1e88f1e2da24b.ctex"
+path="res://.godot/imported/паравозик-removebg-preview.png-b25e04203edba30f20d3169e69cf0e71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://паравозик-removebg-preview.png"
-dest_files=["res://.godot/imported/паравозик-removebg-preview.png-c95c7967d19b7776c5e1e88f1e2da24b.ctex"]
+source_file="res://Sprites/паравозик-removebg-preview.png"
+dest_files=["res://.godot/imported/паравозик-removebg-preview.png-b25e04203edba30f20d3169e69cf0e71.ctex"]
 
 [params]
 
