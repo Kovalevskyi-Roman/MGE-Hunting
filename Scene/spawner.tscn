@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlxt0hvp8upfk"]
+
+[ext_resource type="Script" uid="uid://usnc3ukdkwcg" path="res://Scene/spawner.gd" id="1_dk3fj"]
+[ext_resource type="Texture2D" uid="uid://d218o7m6a08ly" path="res://icon.svg" id="1_iggod"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dk3fj"]
+radius = 67.95587
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource("1_dk3fj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_iggod")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_dk3fj")
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

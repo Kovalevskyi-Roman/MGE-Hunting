@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqdkrb1msrh8m"]
+
+[ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base_enemy.tscn" id="1_128ih"]
+[ext_resource type="Texture2D" uid="uid://6lpjtcfadrqa" path="res://Sprites/MGE Soldat (1).png" id="2_128ih"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lrmch"]
+radius = 55.29725
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iix5k"]
+radius = 38.259224
+
+[node name="MGE Soldat" instance=ExtResource("1_128ih")]
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" parent="." index="2"]
+scale = Vector2(0.12162162, 0.12162162)
+texture = ExtResource("2_128ih")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_lrmch")
+
+[node name="CollisionShape2D" parent="." index="4" groups=["Enemies"]]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_iix5k")
