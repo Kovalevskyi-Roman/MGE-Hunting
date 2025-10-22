@@ -15,7 +15,17 @@ enum states {
 	DIE
 }
 
-var state: states = states.IDLE
+var state: states = states.IDLE:
+	set(value):
+		match state:
+			states.IDLE:
+				idle()
+			states.CHASE:
+				chase()
+			states.ATTACK:
+				attack()
+			states.DIE:
+				die()
 
 func idle() -> void:
 	velocity = Vector2.ZERO
@@ -39,14 +49,4 @@ func _ready() -> void:
 	state = states.IDLE
 
 func _physics_process(_delta: float) -> void:
-	match state:
-		states.IDLE:
-			idle()
-		states.CHASE:
-			chase()
-		states.ATTACK:
-			attack()
-		states.DIE:
-			die()
-
 	move_and_slide()
