@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://drfkfwerymvrp"]
 
 [ext_resource type="Texture2D" uid="uid://bbf4eeqitcv7c" path="res://паравозик-removebg-preview.png" id="1_0e1ay"]
-[ext_resource type="Script" path="res://Scene/Enemies/boss.gd" id="1_hafyc"]
+[ext_resource type="Script" uid="uid://ccwybcvqglh2x" path="res://Scene/Enemies/boss.gd" id="1_hafyc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hafyc"]
 radius = 122.10242
