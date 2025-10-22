@@ -9,6 +9,7 @@ func _physics_process(_delta: float) -> void:
 	rotate_player()
 	
 	Globals.player_pos = self.position
+	Globals.global_player_pos = self.global_position
 	
 func move_player():
 	velocity = Vector2.ZERO

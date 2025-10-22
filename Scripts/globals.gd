@@ -1,3 +1,4 @@
 extends Node
 
-var player_pos
+var player_pos: Vector2
+var global_player_pos: Vector2
