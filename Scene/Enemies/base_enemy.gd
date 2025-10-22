@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
-var speed = 250
-@onready var anim = $AnimatedSprite2D
+var speed = 230
 
 enum {
 	CHASE,
@@ -9,7 +8,7 @@ enum {
 	DIE
 }
 
-var hp: int = 40:
+@export var hp: int = 40:
 	set(value):
 		hp = value
 		if hp <= 0:
@@ -34,8 +33,15 @@ func _physics_process(_delta: float) -> void:
 func chase():
 	var direction = (Globals.player_pos - self.position).normalized()
 	velocity = speed * direction	
-	
+	if direction.x < 0:
+		$Sprite2D.flip_h = true
+	else:
+		$Sprite2D.flip_h = false
+
 func die():
-	#anim.play("die")
-	#await anim.animation_finished
 	queue_free()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		body.hp -= 1
