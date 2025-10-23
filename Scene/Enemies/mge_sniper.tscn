@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsa441misi5bl"]
+
+[ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base_enemy.tscn" id="1_oobp5"]
+[ext_resource type="Script" uid="uid://c4g03rn5sd75o" path="res://Scene/Enemies/mge_sniper.gd" id="2_3ucbq"]
+[ext_resource type="Texture2D" uid="uid://dunotxscqikov" path="res://Sprites/mge_sniper.png" id="2_5xc1e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ucbq"]
+radius = 52.009613
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndlhh"]
+size = Vector2(20, 8)
+
+[node name="MGE Sniper" instance=ExtResource("1_oobp5")]
+script = ExtResource("2_3ucbq")
+
+[node name="Sprite2D" parent="." index="2"]
+scale = Vector2(0.12911394, 0.12911396)
+texture = ExtResource("2_5xc1e")
+
+[node name="Area2D" parent="." index="3"]
+collision_mask = 30
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_3ucbq")
+
+[node name="CollisionShape2D" parent="." index="4"]
+position = Vector2(0, 39)
+shape = SubResource("RectangleShape2D_ndlhh")

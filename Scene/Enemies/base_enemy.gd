@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name BaseEnemie
 
 var speed = 230
 
@@ -22,6 +23,8 @@ var state: int = 0:
 				chase()
 			DIE:
 				die()
+			ATTACK:
+				attack()
 
 func _ready() -> void:
 	add_to_group("Enemies")
@@ -40,6 +43,9 @@ func chase():
 
 func die():
 	queue_free()
+	
+func attack():
+	pass
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
