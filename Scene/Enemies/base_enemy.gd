@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 var speed = 230
+@onready var die_sound = $AudioStreamPlayer2D
+var died = false
 
 enum {
 	CHASE,
@@ -31,17 +33,24 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func chase():
-	var direction = (Globals.player_pos - self.position).normalized()
-	velocity = speed * direction	
-	if direction.x < 0:
-		$Sprite2D.flip_h = true
+	if died != true:
+		var direction = (Globals.player_pos - self.position).normalized()
+		velocity = speed * direction	
+		if direction.x < 0:
+			$Sprite2D.flip_h = true
+		else:
+			$Sprite2D.flip_h = false
 	else:
-		$Sprite2D.flip_h = false
+		velocity = Vector2.ZERO
 
 func die():
+	died = true	
+	if die_sound.playing:
+		return 
+	die_sound.play()
+	await die_sound.finished
 	queue_free()
-
-
+	
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.name == "Player" and died != true:
 		body.hp -= 1
