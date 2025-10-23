@@ -51,10 +51,9 @@ func move_player():
 		
 func rotate_player():
 	if Input.is_action_pressed("rotate_left"):
-		rotation_degrees += 2.7
-	if Input.is_action_pressed("rotate_right"):
 		rotation_degrees -= 2.7
-
+	if Input.is_action_pressed("rotate_right"):
+		rotation_degrees += 2.7
 		
 func die_player():
 	queue_free()

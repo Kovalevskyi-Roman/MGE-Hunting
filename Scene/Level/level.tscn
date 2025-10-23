@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://cv38gfqsixue"]
+[gd_scene load_steps=8 format=4 uid="uid://cv38gfqsixue"]
 
 [ext_resource type="PackedScene" uid="uid://cbher3l5w80uh" path="res://Scene/Player/player.tscn" id="1_4jjjg"]
 [ext_resource type="Texture2D" uid="uid://fb13te486cd1" path="res://TileSet/pixil-frame-0 (36).png" id="1_rxcpp"]
 [ext_resource type="PackedScene" uid="uid://dsa441misi5bl" path="res://Scene/Enemies/mge_sniper.tscn" id="3_rereq"]
+[ext_resource type="PackedScene" uid="uid://dlxt0hvp8upfk" path="res://Scene/spawner.tscn" id="3_x20r8"]
+[ext_resource type="PackedScene" uid="uid://drfkfwerymvrp" path="res://Scene/Enemies/boss.tscn" id="4_rereq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rereq"]
 texture = ExtResource("1_rxcpp")
@@ -26,6 +28,12 @@ tile_set = SubResource("TileSet_k1goc")
 position = Vector2(961, 541)
 scale = Vector2(0.7, 0.7)
 
+[node name="Spawner" parent="." instance=ExtResource("3_x20r8")]
+position = Vector2(217, 117)
+
 [node name="Enemies" type="Node2D" parent="."]
 
+[node name="Boss" parent="Enemies" instance=ExtResource("4_rereq")]
+
 [node name="MGE Sniper" parent="Enemies" instance=ExtResource("3_rereq")]
+position = Vector2(1018, 73)
