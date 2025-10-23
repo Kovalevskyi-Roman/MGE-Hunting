@@ -6,5 +6,5 @@ func die():
 	if die_sound.playing:
 		return 
 	die_sound.play()
-	await die_sound.finished
+	await $AnimationPlayer.animation_finished
 	queue_free()

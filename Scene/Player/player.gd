@@ -8,25 +8,22 @@ enum {
 	DIE
 }
 
-var speed = 300
+var state = MOVE
+var speed = 400
 
 var hp: int = 1:
 	set(value):
 		hp = value
 		if hp <= 0:
-			state = DIE
-
-var state: int = 0:
-	set(value):
-		state = value
-		
-		match state:
-			MOVE:
-				move_player()
-			DIE:
-				die_player()
+			state = DIE	
 		
 func _physics_process(_delta: float) -> void:
+	match state:
+		MOVE:
+			move_player()
+		DIE:
+			die_player()
+	
 	state = MOVE
 	
 	Globals.player_pos = self.position
@@ -59,10 +56,10 @@ func die_player():
 	queue_free()
 	
 func shot():
-	var _bullet = BULLET.instantiate()
-	_bullet.create_bullet(rotation + PI/2)
-	_bullet.global_position = $Marker2D.global_position
-	get_tree().current_scene.add_child(_bullet)
+	var bullet = BULLET.instantiate()
+	bullet.create_bullet(rotation + PI/2)
+	bullet.global_position = $Marker2D.global_position
+	get_tree().current_scene.add_child(bullet)
 
 func _on_shot_timer_timeout() -> void:
 	shot()
