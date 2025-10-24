@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4mg4mdedkirl"]
+[gd_scene load_steps=11 format=3 uid="uid://b4mg4mdedkirl"]
 
 [ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base_enemy.tscn" id="1_128ih"]
 [ext_resource type="Texture2D" uid="uid://6lpjtcfadrqa" path="res://Sprites/MGE Soldat (1).png" id="2_128ih"]
@@ -19,9 +19,37 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Sprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.12162162, 0.12162162)]
+}
+
+[sub_resource type="Animation" id="Animation_0xinw"]
+resource_name = "chase"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.12162162, 0.12162162), Vector2(0.14, 0.14), Vector2(0.12162162, 0.12162162)]
+}
 
 [sub_resource type="Animation" id="Animation_36ho0"]
-resource_name = "new_animation"
+resource_name = "die"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -38,7 +66,8 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0xinw"]
 _data = {
 &"RESET": SubResource("Animation_udn5o"),
-&"new_animation": SubResource("Animation_36ho0")
+&"chase": SubResource("Animation_0xinw"),
+&"die": SubResource("Animation_36ho0")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lrmch"]
@@ -48,7 +77,8 @@ radius = 55.29725
 size = Vector2(48.666668, 32.038002)
 
 [node name="MGE Soldat" instance=ExtResource("1_128ih")]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.7, 1.7)
+collision_mask = 13
 script = ExtResource("2_udn5o")
 
 [node name="AnimationPlayer" parent="." index="0"]

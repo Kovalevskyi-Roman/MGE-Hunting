@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const BULLET = preload("res://Scene/Bullets/bullet.tscn")
 
 enum {
@@ -9,13 +8,16 @@ enum {
 }
 
 var state = MOVE
-var speed = 400
+var speed = 450
 
 var hp: int = 1:
 	set(value):
 		hp = value
 		if hp <= 0:
 			state = DIE	
+
+func _ready() -> void:
+	state = MOVE
 		
 func _physics_process(_delta: float) -> void:
 	match state:
@@ -24,7 +26,7 @@ func _physics_process(_delta: float) -> void:
 		DIE:
 			die_player()
 	
-	state = MOVE
+	
 	
 	Globals.player_pos = self.position
 	Globals.global_player_pos = self.global_position
