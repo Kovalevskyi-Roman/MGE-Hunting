@@ -11,7 +11,6 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_iggod")
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 5.0
 autostart = true
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
