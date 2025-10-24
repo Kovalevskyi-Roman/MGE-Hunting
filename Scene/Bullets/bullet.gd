@@ -12,7 +12,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	var area_parent = area.get_parent()
 	if area_parent.died == true:
 		return
-	if area.is_in_group("Enemies"):
+	if area_parent.is_in_group("Enemies"):
 		area_parent.hp -= 10
 	queue_free()
 
