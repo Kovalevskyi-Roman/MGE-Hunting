@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://cv38gfqsixue"]
+[gd_scene load_steps=6 format=4 uid="uid://cv38gfqsixue"]
 
 [ext_resource type="PackedScene" uid="uid://cbher3l5w80uh" path="res://Scene/Player/player.tscn" id="1_4jjjg"]
 [ext_resource type="Script" uid="uid://dsajeq31qvha3" path="res://Scene/Level/level.gd" id="1_rereq"]
 [ext_resource type="Texture2D" uid="uid://fb13te486cd1" path="res://TileSet/pixil-frame-0 (36).png" id="1_rxcpp"]
-[ext_resource type="PackedScene" uid="uid://dlxt0hvp8upfk" path="res://Scene/Others/spawner.tscn" id="3_x20r8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rereq"]
 texture = ExtResource("1_rxcpp")
@@ -29,15 +28,6 @@ position = Vector2(961, 541)
 scale = Vector2(0.7, 0.7)
 
 [node name="Enemies" type="Node2D" parent="."]
-
-[node name="Spawner" parent="." instance=ExtResource("3_x20r8")]
-position = Vector2(-422, 710)
-
-[node name="Spawner2" parent="." instance=ExtResource("3_x20r8")]
-position = Vector2(1236, -541)
-
-[node name="Spawner3" parent="." instance=ExtResource("3_x20r8")]
-position = Vector2(3042, 717)
 
 [node name="WaveTimer" type="Timer" parent="."]
 wait_time = 10.0
