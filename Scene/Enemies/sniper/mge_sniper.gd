@@ -1,13 +1,10 @@
 extends BaseEnemie
 
-const BULLET = preload("res://Scene/Bullets/enemie_bullet.tscn")
+const BULLET = preload("res://Scene/Bullets/Sniper Bullets/enemie_bullet.tscn")
 const CENSURED_BULLET = preload("res://CensuredVersion/censured_bullet.tscn")
 
-var shoot_radius = 450
+var shoot_radius = 500
 var in_attack = false
-
-func _ready() -> void:
-	add_to_group("Enemies")
 	
 func _physics_process(_delta: float) -> void:
 	var direction: Vector2 = (Globals.global_player_pos - $Sprite2D2.global_position).normalized()

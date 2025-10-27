@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://brb6p1m2e1cly"]
+
+[ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base enemy/base_enemy.tscn" id="1_xdfbi"]
+[ext_resource type="Script" uid="uid://lh8y1lo5rxbv" path="res://Scene/Enemies/medic/mge_medic.gd" id="2_4wg21"]
+[ext_resource type="Texture2D" uid="uid://bjieutqv0mwfv" path="res://Sprites/MGE Medic.png" id="2_x3gry"]
+[ext_resource type="Texture2D" uid="uid://d218o7m6a08ly" path="res://icon.svg" id="4_ivj3l"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x3gry"]
+radius = 53.009434
+
+[node name="MGE Medic" instance=ExtResource("1_xdfbi")]
+collision_layer = 16
+collision_mask = 25
+script = ExtResource("2_4wg21")
+
+[node name="Sprite2D" parent="." index="2"]
+scale = Vector2(0.27040818, 0.2704082)
+texture = ExtResource("2_x3gry")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_x3gry")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="6"]
+position = Vector2(-21, 31)
+rotation = -1.5707964
+scale = Vector2(0.1953125, 0.5)
+texture = ExtResource("4_ivj3l")
+offset = Vector2(0, 50)
+
+[node name="Marker2D" type="Marker2D" parent="Sprite2D2" index="0"]
+position = Vector2(-9.765625e-06, 74)

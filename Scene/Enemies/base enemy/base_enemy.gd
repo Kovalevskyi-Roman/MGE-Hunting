@@ -29,11 +29,12 @@ var state: int = 0:
 				attack()
 
 func _ready() -> void:
-	add_to_group("Enemies")
+	$Area2D.add_to_group("Enemies")
 
 func _physics_process(_delta: float) -> void:
 	state = CHASE
 	move_and_slide()
+	Globals.enemy_pos = self.position
 
 func chase():
 	if died != true:
@@ -53,7 +54,6 @@ func die():
 	die_sound.play()
 	await die_sound.finished
 	queue_free()
-	
 
 func attack():
 	pass

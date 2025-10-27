@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://drfkfwerymvrp"]
+[gd_scene load_steps=5 format=3 uid="uid://bc333vro1jksd"]
 
 [ext_resource type="Texture2D" uid="uid://bbf4eeqitcv7c" path="res://Sprites/boss.png" id="1_0e1ay"]
-[ext_resource type="Script" uid="uid://ccwybcvqglh2x" path="res://Scene/Enemies/boss.gd" id="1_hafyc"]
+[ext_resource type="Script" uid="uid://bs4w424jts237" path="res://Scene/Enemies/Boss/boss.gd" id="1_hw1sv"]
 [ext_resource type="AudioStream" uid="uid://b6e4eb8btsjke" path="res://Sounds/Blya.wav" id="3_kjuiy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hafyc"]
@@ -10,7 +10,7 @@ radius = 122.10242
 [node name="Boss" type="CharacterBody2D" groups=["Enemies"]]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_hafyc")
+script = ExtResource("1_hw1sv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.56, 0.56)

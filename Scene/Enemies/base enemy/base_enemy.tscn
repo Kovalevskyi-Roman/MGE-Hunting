@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://b84swngxplb21"]
 
-[ext_resource type="Script" uid="uid://2wnw3d13j7t5" path="res://Scene/Enemies/base_enemy.gd" id="1_k7620"]
+[ext_resource type="Script" uid="uid://2wnw3d13j7t5" path="res://Scene/Enemies/base enemy/base_enemy.gd" id="1_f74al"]
 
 [node name="BaseEnemy" type="CharacterBody2D" groups=["Enemies"]]
 collision_layer = 4
 collision_mask = 9
-script = ExtResource("1_k7620")
+script = ExtResource("1_f74al")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimatedSprite2D")
@@ -23,7 +23,7 @@ collision_mask = 14
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-volume_db = -10.0
+volume_db = -20.0
 pitch_scale = 1.1
 panning_strength = 0.23
 

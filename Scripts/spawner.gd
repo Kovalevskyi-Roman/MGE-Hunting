@@ -1,9 +1,11 @@
 extends Node2D
 
-const ENEMY_SOLDER= preload("res://Scene/Enemies/MGE Soldat.tscn")
-const ENEMY_SNIPER = preload("res://Scene/Enemies/mge_sniper.tscn")
 
-var type_enemy = [ENEMY_SNIPER, ENEMY_SOLDER]
+const ENEMY_SOLDER= preload("res://Scene/Enemies/solder/MGE Soldat.tscn")
+const ENEMY_SNIPER = preload("res://Scene/Enemies/sniper/MGE Sniper.tscn")
+const ENEMY_MEDIC = preload("res://Scene/Enemies/medic/MGE medic.tscn")
+
+var type_enemy = [ENEMY_SNIPER, ENEMY_SOLDER, ENEMY_MEDIC]
 
 @export var camera_path : NodePath
 @onready var cam = get_node(camera_path)
@@ -28,10 +30,6 @@ func spawn_enemy(_number_of_enemies):
 	if not level_rect.has_point(pos):
 		enemy.queue_free()
 		Globals.number_of_enemies += 1
-		
-	#pos += sign(pos - camera_pos) * half
-	#pos.x = clamp(pos.x, level_rect.position.x, level_rect.position.x + level_rect.size.x)
-	#pos.y = clamp(pos.y, level_rect.position.y, level_rect.position.y + level_rect.size.y)	
 	
 	if Globals.number_of_enemies > 0:
 		Globals.number_of_enemies -= 1
