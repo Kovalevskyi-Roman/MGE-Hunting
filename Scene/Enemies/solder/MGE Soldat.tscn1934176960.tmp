@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://b4mg4mdedkirl"]
 
-[ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base_enemy.tscn" id="1_128ih"]
-[ext_resource type="Texture2D" uid="uid://6lpjtcfadrqa" path="res://Sprites/MGE Soldat (1).png" id="2_128ih"]
-[ext_resource type="Script" uid="uid://djq3yhch08lwg" path="res://Scene/Enemies/mge_soldat.gd" id="2_udn5o"]
-[ext_resource type="AudioStream" uid="uid://b6e4eb8btsjke" path="res://Sounds/Blya.wav" id="3_36ho0"]
+[ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base enemy/base_enemy.tscn" id="1_otsr7"]
+[ext_resource type="Script" uid="uid://djq3yhch08lwg" path="res://Scene/Enemies/solder/mge_soldat.gd" id="2_y50pk"]
+[ext_resource type="Texture2D" uid="uid://6lpjtcfadrqa" path="res://Sprites/MGE Soldat (1).png" id="3_t1ciq"]
+[ext_resource type="AudioStream" uid="uid://b6e4eb8btsjke" path="res://Sounds/Blya.wav" id="4_mgj7n"]
 
 [sub_resource type="Animation" id="Animation_udn5o"]
 length = 0.001
@@ -76,11 +76,10 @@ radius = 55.29725
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iix5k"]
 size = Vector2(48.666668, 32.038002)
 
-[node name="MGE Soldat" instance=ExtResource("1_128ih")]
+[node name="MGE Soldat" instance=ExtResource("1_otsr7")]
 scale = Vector2(1.7, 1.7)
 collision_mask = 13
-script = ExtResource("2_udn5o")
-hp = 1
+script = ExtResource("2_y50pk")
 
 [node name="AnimationPlayer" parent="." index="0"]
 libraries = {
@@ -89,7 +88,7 @@ libraries = {
 
 [node name="Sprite2D" parent="." index="2"]
 scale = Vector2(0.12162162, 0.12162162)
-texture = ExtResource("2_128ih")
+texture = ExtResource("3_t1ciq")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("CircleShape2D_lrmch")
@@ -99,6 +98,5 @@ position = Vector2(0, 32.019005)
 shape = SubResource("RectangleShape2D_iix5k")
 
 [node name="AudioStreamPlayer2D" parent="." index="5"]
-stream = ExtResource("3_36ho0")
-volume_db = -20.0
+stream = ExtResource("4_mgj7n")
 pitch_scale = 1.0

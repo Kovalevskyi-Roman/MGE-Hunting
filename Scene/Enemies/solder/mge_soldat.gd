@@ -1,4 +1,4 @@
-extends "res://Scene/Enemies/base_enemy.gd"
+extends BaseEnemie
 
 func die():
 	died = true	

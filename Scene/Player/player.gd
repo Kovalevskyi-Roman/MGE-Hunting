@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const BULLET = preload("res://Scene/Bullets/bullet.tscn")
+const BULLET = preload("res://Scene/Bullets/Players Bullets/bullet.tscn")
 
 enum {
 	MOVE,
@@ -25,8 +25,6 @@ func _physics_process(_delta: float) -> void:
 			move_player()
 		DIE:
 			die_player()
-	
-	
 	
 	Globals.player_pos = self.position
 	Globals.global_player_pos = self.global_position

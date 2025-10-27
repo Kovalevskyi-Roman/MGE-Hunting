@@ -6,8 +6,8 @@ var speed = 10
 func _physics_process(_delta: float) -> void:
 	move_and_collide(velocity)
 	
-func create_bullet(enemie_pos):
-	var direction: Vector2 = (Globals.player_pos - enemie_pos).normalized()
+func create_bullet(marker_pos):
+	var direction: Vector2 = (Globals.player_pos - marker_pos).normalized()
 	velocity = direction * speed
 	rotation = direction.angle() - PI / 2
 

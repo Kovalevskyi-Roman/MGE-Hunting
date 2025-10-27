@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6lpjtcfadrqa"
-path="res://.godot/imported/MGE Soldat (1).png-31b34accdfdecea8ba22c607bc0c9181.ctex"
+uid="uid://bjieutqv0mwfv"
+path="res://.godot/imported/MGE Medic.png-e42bfecf0d52527612bafbe5d0d2e4e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/MGE Soldat (1).png"
-dest_files=["res://.godot/imported/MGE Soldat (1).png-31b34accdfdecea8ba22c607bc0c9181.ctex"]
+source_file="res://Sprites/MGE Medic.png"
+dest_files=["res://.godot/imported/MGE Medic.png-e42bfecf0d52527612bafbe5d0d2e4e0.ctex"]
 
 [params]
 

@@ -1,14 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlxt0hvp8upfk"]
+[gd_scene load_steps=2 format=3 uid="uid://dlxt0hvp8upfk"]
 
 [ext_resource type="Script" uid="uid://usnc3ukdkwcg" path="res://Scripts/spawner.gd" id="1_dk3fj"]
-[ext_resource type="Texture2D" uid="uid://d218o7m6a08ly" path="res://icon.svg" id="1_iggod"]
 
 [node name="Spawner" type="Node2D"]
 script = ExtResource("1_dk3fj")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_iggod")
 
 [node name="SpawnTimer" type="Timer" parent="."]
 autostart = true

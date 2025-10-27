@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dbbxr2w0r0200"]
 
-[ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base_enemy.tscn" id="1_luxod"]
-[ext_resource type="Script" uid="uid://c4g03rn5sd75o" path="res://Scene/Enemies/mge_sniper.gd" id="2_dx8vx"]
+[ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base enemy/base_enemy.tscn" id="1_luxod"]
+[ext_resource type="Script" uid="uid://c4g03rn5sd75o" path="res://Scene/Enemies/sniper/mge_sniper.gd" id="2_dx8vx"]
 [ext_resource type="Texture2D" uid="uid://d218o7m6a08ly" path="res://icon.svg" id="3_yyyjh"]
 [ext_resource type="AudioStream" uid="uid://b6e4eb8btsjke" path="res://Sounds/Blya.wav" id="4_j2a37"]
 

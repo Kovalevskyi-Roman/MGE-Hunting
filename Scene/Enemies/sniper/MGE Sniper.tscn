@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://1q70b1cm57t5"]
+
+[ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base enemy/base_enemy.tscn" id="1_nktcb"]
+[ext_resource type="Script" uid="uid://c4g03rn5sd75o" path="res://Scene/Enemies/sniper/mge_sniper.gd" id="2_73i0a"]
+[ext_resource type="Texture2D" uid="uid://dunotxscqikov" path="res://Sprites/mge_sniper.png" id="3_c2i13"]
+[ext_resource type="AudioStream" uid="uid://bk63idk3bdgm0" path="res://Sounds/Pedic.wav" id="4_dptpb"]
+[ext_resource type="Texture2D" uid="uid://benl53o08s5wt" path="res://Sprites/sniper_weapon_2.png" id="5_vj1wq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ucbq"]
+radius = 52.009613
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndlhh"]
+size = Vector2(56, 23)
+
+[node name="MGE Sniper" instance=ExtResource("1_nktcb")]
+z_index = 7
+scale = Vector2(1.5, 1.5)
+collision_layer = 64
+collision_mask = 73
+script = ExtResource("2_73i0a")
+hp = 20
+
+[node name="Sprite2D" parent="." index="2"]
+scale = Vector2(0.12911394, 0.12911396)
+texture = ExtResource("3_c2i13")
+
+[node name="Area2D" parent="." index="3"]
+collision_mask = 30
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_3ucbq")
+
+[node name="CollisionShape2D" parent="." index="4"]
+position = Vector2(0, 31.5)
+shape = SubResource("RectangleShape2D_ndlhh")
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("4_dptpb")
+pitch_scale = 1.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="6"]
+z_index = 1
+position = Vector2(-19.002707, 48)
+scale = Vector2(0.276, 0.276)
+texture = ExtResource("5_vj1wq")
+offset = Vector2(157.5, 0)
+
+[node name="Marker2D" type="Marker2D" parent="Sprite2D2" index="0"]
+position = Vector2(373.19818, -2.4154615)
+scale = Vector2(3.382354, 3.3823533)
