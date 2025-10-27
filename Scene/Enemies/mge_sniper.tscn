@@ -14,13 +14,13 @@ size = Vector2(56, 23)
 
 [node name="MGE Sniper" instance=ExtResource("1_oobp5")]
 script = ExtResource("2_3ucbq")
-hp = 1
+hp = 70
 
 [node name="Sprite2D" parent="." index="2"]
 scale = Vector2(0.12911394, 0.12911396)
 texture = ExtResource("2_5xc1e")
 
-[node name="Area2D" parent="." index="3" groups=["Enemies"]]
+[node name="Area2D" parent="." index="3"]
 collision_mask = 30
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]

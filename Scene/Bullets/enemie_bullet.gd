@@ -12,6 +12,6 @@ func create_bullet(enemie_pos):
 	rotation = direction.angle() - PI / 2
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	queue_free()
 	if body.name == "Player":
 		body.hp = 0
-	queue_free()
