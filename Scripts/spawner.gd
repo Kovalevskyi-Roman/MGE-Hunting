@@ -1,7 +1,7 @@
 extends Node2D
 
 const ENEMY_SOLDER= preload("res://Scene/Enemies/MGE Soldat.tscn")
-const ENEMY_SNIPER = preload("res://CensuredVersion/censured_sniper.tscn")
+const ENEMY_SNIPER = preload("res://Scene/Enemies/mge_sniper.tscn")
 
 var type_enemy = [ENEMY_SNIPER, ENEMY_SOLDER]
 

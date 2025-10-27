@@ -10,7 +10,7 @@ func _ready() -> void:
 	add_to_group("Enemies")
 	
 func _physics_process(_delta: float) -> void:
-	var direction: Vector2 = (Globals.player_pos - position).normalized()
+	var direction: Vector2 = (Globals.global_player_pos - $Sprite2D2.global_position).normalized()
 	$Sprite2D2.rotation = direction.angle()
 	$Sprite2D2.flip_h = abs($Sprite2D2.rotation) > PI / 2
 	$Sprite2D2.flip_v = $Sprite2D2.flip_h
@@ -27,7 +27,7 @@ func chase():
 func attack():
 	if not in_attack:
 		in_attack = true
-		var bullet: EnemieBullet = CENSURED_BULLET.instantiate()
+		var bullet: EnemieBullet = BULLET.instantiate()
 		bullet.create_bullet($Sprite2D2/Marker2D.global_position)
 		bullet.global_position = $Sprite2D2/Marker2D.global_position
 		get_tree().current_scene.add_child(bullet)
