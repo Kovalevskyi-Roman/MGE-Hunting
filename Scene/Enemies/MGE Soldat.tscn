@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base_enemy.tscn" id="1_128ih"]
 [ext_resource type="Texture2D" uid="uid://6lpjtcfadrqa" path="res://Sprites/MGE Soldat (1).png" id="2_128ih"]
 [ext_resource type="Script" uid="uid://djq3yhch08lwg" path="res://Scene/Enemies/mge_soldat.gd" id="2_udn5o"]
-[ext_resource type="AudioStream" uid="uid://b6e4eb8btsjke" path="res://Sounds/Бля.wav" id="3_36ho0"]
+[ext_resource type="AudioStream" uid="uid://b6e4eb8btsjke" path="res://Sounds/Blya.wav" id="3_36ho0"]
 
 [sub_resource type="Animation" id="Animation_udn5o"]
 length = 0.001
@@ -89,8 +89,6 @@ libraries = {
 [node name="Sprite2D" parent="." index="2"]
 scale = Vector2(0.12162162, 0.12162162)
 texture = ExtResource("2_128ih")
-
-[node name="Area2D" parent="." index="3" groups=["Enemies"]]
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("CircleShape2D_lrmch")

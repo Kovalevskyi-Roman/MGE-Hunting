@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base_enemy.tscn" id="1_oobp5"]
 [ext_resource type="Script" uid="uid://c4g03rn5sd75o" path="res://Scene/Enemies/mge_sniper.gd" id="2_3ucbq"]
 [ext_resource type="Texture2D" uid="uid://dunotxscqikov" path="res://Sprites/mge_sniper.png" id="2_5xc1e"]
-[ext_resource type="AudioStream" uid="uid://b6e4eb8btsjke" path="res://Sounds/Бля.wav" id="4_jv45m"]
+[ext_resource type="AudioStream" uid="uid://b6e4eb8btsjke" path="res://Sounds/Blya.wav" id="4_jv45m"]
 [ext_resource type="Texture2D" uid="uid://benl53o08s5wt" path="res://Sprites/sniper_weapon_2.png" id="4_ndlhh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3ucbq"]

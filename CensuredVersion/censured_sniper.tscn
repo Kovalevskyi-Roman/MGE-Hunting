@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbbxr2w0r0200"]
+
+[ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base_enemy.tscn" id="1_luxod"]
+[ext_resource type="Script" uid="uid://c4g03rn5sd75o" path="res://Scene/Enemies/mge_sniper.gd" id="2_dx8vx"]
+[ext_resource type="Texture2D" uid="uid://d218o7m6a08ly" path="res://icon.svg" id="3_yyyjh"]
+[ext_resource type="AudioStream" uid="uid://b6e4eb8btsjke" path="res://Sounds/Blya.wav" id="4_j2a37"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ucbq"]
+radius = 52.009613
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ndlhh"]
+size = Vector2(56, 23)
+
+[node name="CensuredSniper" instance=ExtResource("1_luxod")]
+script = ExtResource("2_dx8vx")
+hp = 1
+
+[node name="Sprite2D" parent="." index="2"]
+scale = Vector2(0.75, 0.75000006)
+texture = ExtResource("3_yyyjh")
+
+[node name="Area2D" parent="." index="3"]
+collision_mask = 30
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_3ucbq")
+
+[node name="CollisionShape2D" parent="." index="4"]
+position = Vector2(0, 31.5)
+shape = SubResource("RectangleShape2D_ndlhh")
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("4_j2a37")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." index="6"]
+z_index = 1
+position = Vector2(32.039135, 48.000004)
+scale = Vector2(0.7962636, 0.29565215)
+texture = ExtResource("3_yyyjh")
+
+[node name="Marker2D" type="Marker2D" parent="Sprite2D2" index="0"]
+position = Vector2(74.04692, -1.5258789e-05)
+scale = Vector2(1.2558656, 3.382353)

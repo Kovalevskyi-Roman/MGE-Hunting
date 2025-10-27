@@ -1,6 +1,7 @@
 extends BaseEnemie
 
 const BULLET = preload("res://Scene/Bullets/enemie_bullet.tscn")
+const CENSURED_BULLET = preload("res://CensuredVersion/censured_bullet.tscn")
 
 var shoot_radius = 450
 var in_attack = false
@@ -26,7 +27,7 @@ func chase():
 func attack():
 	if not in_attack:
 		in_attack = true
-		var bullet: EnemieBullet = BULLET.instantiate()
+		var bullet: EnemieBullet = CENSURED_BULLET.instantiate()
 		bullet.create_bullet($Sprite2D2/Marker2D.global_position)
 		bullet.global_position = $Sprite2D2/Marker2D.global_position
 		get_tree().current_scene.add_child(bullet)
