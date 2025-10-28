@@ -1,31 +1,87 @@
-[gd_scene load_steps=6 format=3 uid="uid://brb6p1m2e1cly"]
+[gd_scene load_steps=11 format=3 uid="uid://brb6p1m2e1cly"]
 
 [ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base enemy/base_enemy.tscn" id="1_xdfbi"]
 [ext_resource type="Script" uid="uid://lh8y1lo5rxbv" path="res://Scene/Enemies/medic/mge_medic.gd" id="2_4wg21"]
 [ext_resource type="Texture2D" uid="uid://bjieutqv0mwfv" path="res://Sprites/MGE Medic.png" id="2_x3gry"]
-[ext_resource type="Texture2D" uid="uid://d218o7m6a08ly" path="res://icon.svg" id="4_ivj3l"]
+[ext_resource type="AudioStream" uid="uid://btkqhtww1nvjx" path="res://Sounds/Schweine.wav" id="4_h0cqr"]
+[ext_resource type="Texture2D" uid="uid://bc6odg6k52l28" path="res://Sprites/Crossbow.png" id="5_h0cqr"]
+
+[sub_resource type="Animation" id="Animation_23jf4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_h0cqr"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_83f56"]
+_data = {
+&"RESET": SubResource("Animation_23jf4"),
+&"die": SubResource("Animation_h0cqr")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x3gry"]
 radius = 53.009434
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivj3l"]
+size = Vector2(39, 26)
+
 [node name="MGE Medic" instance=ExtResource("1_xdfbi")]
+scale = Vector2(1.2, 1.2)
 collision_layer = 16
 collision_mask = 25
 script = ExtResource("2_4wg21")
+hp = 10
+
+[node name="AnimationPlayer" parent="." index="0"]
+libraries = {
+&"": SubResource("AnimationLibrary_83f56")
+}
 
 [node name="Sprite2D" parent="." index="2"]
 scale = Vector2(0.27040818, 0.2704082)
 texture = ExtResource("2_x3gry")
 
+[node name="Area2D" parent="." index="3"]
+collision_layer = 16
+
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("CircleShape2D_x3gry")
 
+[node name="CollisionShape2D" parent="." index="4"]
+position = Vector2(0.5, 36)
+shape = SubResource("RectangleShape2D_ivj3l")
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("4_h0cqr")
+
 [node name="Sprite2D2" type="Sprite2D" parent="." index="6"]
-position = Vector2(-21, 31)
-rotation = -1.5707964
-scale = Vector2(0.1953125, 0.5)
-texture = ExtResource("4_ivj3l")
-offset = Vector2(0, 50)
+position = Vector2(-18.000006, 31.999994)
+scale = Vector2(0.38, 0.38)
+texture = ExtResource("5_h0cqr")
+offset = Vector2(-45.865, -46.495)
 
 [node name="Marker2D" type="Marker2D" parent="Sprite2D2" index="0"]
-position = Vector2(-9.765625e-06, 74)
+position = Vector2(-104.205215, -104.205246)

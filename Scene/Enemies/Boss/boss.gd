@@ -30,7 +30,7 @@ func chase() -> void:
 	velocity = direction.normalized() * move_speed
 
 func attack() -> void:
-	for i in range(0, 360, int(360.0 / 12)):
+	for i in range(0, 360, int(360.0 / 18)):
 		var bullet = BULLET.instantiate()
 		bullet.create_angle_bullet(i)
 		bullet.global_position = global_position
@@ -55,6 +55,9 @@ func _ready() -> void:
 	state = states.IDLE
 
 func _physics_process(_delta: float) -> void:
+	Globals.enemy_pos = self.position
+	Globals.global_enemy_pos = self.global_position
+	
 	if died:
 		state = states.DIE
 
@@ -68,7 +71,6 @@ func _physics_process(_delta: float) -> void:
 		states.DIE:
 			die()
 	move_and_slide()
-
 
 func _on_shoot_timer_timeout() -> void:
 	state = states.ATTACK

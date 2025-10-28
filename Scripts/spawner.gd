@@ -5,7 +5,8 @@ const ENEMY_SOLDER= preload("res://Scene/Enemies/solder/MGE Soldat.tscn")
 const ENEMY_SNIPER = preload("res://Scene/Enemies/sniper/MGE Sniper.tscn")
 const ENEMY_MEDIC = preload("res://Scene/Enemies/medic/MGE medic.tscn")
 
-var type_enemy = [ENEMY_SNIPER, ENEMY_SOLDER, ENEMY_MEDIC]
+var type_enemy = [ENEMY_SNIPER, ENEMY_SOLDER, 
+ENEMY_SOLDER, ENEMY_MEDIC]
 
 @export var camera_path : NodePath
 @onready var cam = get_node(camera_path)
@@ -21,7 +22,7 @@ func spawn_enemy(_number_of_enemies):
 	var camera_pos = cam.global_position
 	var view_size = get_viewport().get_visible_rect().size
 	var half = view_size * 0.5
-	var pos = camera_pos + Vector2(randf_range(-half.x * 1.5, half.x * 1.5), randf_range(-half.y * 1.5, half.y * 1.5))
+	var pos = camera_pos + Vector2(randf_range(-half.x * 1.6, half.x * 1.6), randf_range(-half.y * 1.6, half.y * 1.6))
 	var level_rect: Rect2 = Rect2(Vector2(-882, -505), Vector2(3956, 2810))
 
 	if Rect2(camera_pos - half, view_size).has_point(pos):

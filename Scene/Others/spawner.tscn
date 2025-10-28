@@ -6,6 +6,7 @@
 script = ExtResource("1_dk3fj")
 
 [node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 1.6999999999999997
 autostart = true
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

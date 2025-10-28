@@ -8,7 +8,7 @@ enum {
 }
 
 var state = MOVE
-var speed = 450
+var speed = 460
 
 var hp: int = 1:
 	set(value):

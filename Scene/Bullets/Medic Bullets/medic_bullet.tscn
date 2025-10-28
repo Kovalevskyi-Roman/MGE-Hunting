@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpiltphf4qney"]
+
+[ext_resource type="PackedScene" uid="uid://ba166bgasibph" path="res://Scene/Bullets/Sniper Bullets/enemie_bullet.tscn" id="1_lbiuu"]
+[ext_resource type="Script" uid="uid://sf8mv7r0gko7" path="res://Scene/Bullets/Medic Bullets/medic_bullet.gd" id="2_ei2ye"]
+[ext_resource type="Texture2D" uid="uid://d218o7m6a08ly" path="res://icon.svg" id="3_ei2ye"]
+
+[node name="Medic Bullet" instance=ExtResource("1_lbiuu")]
+script = ExtResource("2_ei2ye")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("3_ei2ye")
+
+[node name="Area2D" parent="." index="2"]
+collision_mask = 68
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

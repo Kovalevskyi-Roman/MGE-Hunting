@@ -3,7 +3,7 @@ extends BaseEnemie
 const BULLET = preload("res://Scene/Bullets/Sniper Bullets/enemie_bullet.tscn")
 const CENSURED_BULLET = preload("res://CensuredVersion/censured_bullet.tscn")
 
-var shoot_radius = 500
+var shoot_radius = 510
 var in_attack = false
 	
 func _physics_process(_delta: float) -> void:
@@ -31,3 +31,12 @@ func attack():
 		await get_tree().create_timer(4).timeout
 		in_attack = false
 		state = CHASE
+
+func die():
+	died = true	
+	$AnimationPlayer.play("die")
+	if die_sound.playing:
+		return 
+	die_sound.play()
+	await $AnimationPlayer.animation_finished
+	queue_free()

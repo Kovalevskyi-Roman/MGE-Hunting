@@ -1,19 +1,20 @@
 extends CharacterBody2D
 class_name BaseEnemie
 
-var speed = 310
+var speed = 290
 @onready var die_sound = $AudioStreamPlayer2D
 var died = false
 
 enum {
 	CHASE,
 	ATTACK,
-	DIE
+	DIE,
+	KAMIKAZE
 }
 
 @export var hp: int = 40:
 	set(value):
-		hp = value
+		hp = value	
 		if hp <= 0:
 			state = DIE
 
@@ -35,6 +36,7 @@ func _physics_process(_delta: float) -> void:
 	state = CHASE
 	move_and_slide()
 	Globals.enemy_pos = self.position
+	Globals.global_enemy_pos = self.global_position
 
 func chase():
 	if died != true:
@@ -53,6 +55,7 @@ func die():
 		return 
 	die_sound.play()
 	await die_sound.finished
+	self.position = Vector2(0, 0)
 	queue_free()
 
 func attack():

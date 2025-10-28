@@ -10,8 +10,9 @@ size = Vector2(6, 11)
 size = Vector2(14, 21)
 
 [node name="Enemie Bullet" type="CharacterBody2D"]
-collision_layer = 32
-collision_mask = 3
+z_index = 4
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_ws1qu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
