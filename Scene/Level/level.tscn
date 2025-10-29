@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cv38gfqsixue"]
+[gd_scene load_steps=13 format=4 uid="uid://cv38gfqsixue"]
 
 [ext_resource type="PackedScene" uid="uid://cbher3l5w80uh" path="res://Scene/Player/player.tscn" id="1_4jjjg"]
 [ext_resource type="Script" uid="uid://dsajeq31qvha3" path="res://Scene/Level/level.gd" id="1_rereq"]
@@ -660,6 +660,30 @@ texture = ExtResource("2_x20r8")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_rereq")
 
+[sub_resource type="Curve2D" id="Curve2D_sseyr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -762, -470, 0, 0, 0, 0, 3001, -470)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_pwhjf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -762, -500, 0, 0, 0, 0, -762, 2192.45)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_mrpwd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -762, 2272, 0, 0, 0, 0, 3001, 2272)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_pssmx"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 3001, -500, 0, 0, 0, 0, 3001, 2192)
+}
+point_count = 2
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_rereq")
 
@@ -711,5 +735,37 @@ position = Vector2(3074, 2302)
 stream = ExtResource("5_k1goc")
 volume_db = -40.0
 autoplay = true
+
+[node name="TrainSpawn" type="Node2D" parent="."]
+
+[node name="HorizontalTop" type="Path2D" parent="TrainSpawn"]
+position = Vector2(0, -300)
+curve = SubResource("Curve2D_sseyr")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="TrainSpawn/HorizontalTop"]
+position = Vector2(-762, -470)
+
+[node name="VerticalLeft" type="Path2D" parent="TrainSpawn"]
+position = Vector2(-300, 0)
+curve = SubResource("Curve2D_pwhjf")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="TrainSpawn/VerticalLeft"]
+position = Vector2(-762, -500)
+rotation = 1.5707964
+
+[node name="HorizontalBottom" type="Path2D" parent="TrainSpawn"]
+position = Vector2(0, 300)
+curve = SubResource("Curve2D_mrpwd")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="TrainSpawn/HorizontalBottom"]
+position = Vector2(-762, 2272)
+
+[node name="VerticalRight" type="Path2D" parent="TrainSpawn"]
+position = Vector2(340, 0)
+curve = SubResource("Curve2D_pssmx")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="TrainSpawn/VerticalRight"]
+position = Vector2(3001, -500)
+rotation = 1.5707964
 
 [editable path="Player"]

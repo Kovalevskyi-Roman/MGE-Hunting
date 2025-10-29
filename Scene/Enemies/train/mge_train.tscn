@@ -79,6 +79,7 @@ size = Vector2(320, 160)
 script = ExtResource("2_kkbeq")
 
 [node name="AnimatedSprite2D" parent="." index="1"]
+z_index = 2
 scale = Vector2(0.5828876, 0.5828877)
 sprite_frames = SubResource("SpriteFrames_qwvf2")
 autoplay = "default"
@@ -94,8 +95,21 @@ shape = SubResource("RectangleShape2D_st604")
 
 [node name="AudioStreamPlayer2D" parent="." index="5"]
 stream = ExtResource("18_doqyo")
-volume_db = -30.0
+volume_db = -40.0
 pitch_scale = 1.0
 autoplay = true
-max_distance = 1500.0
+max_distance = 2100.0
 parameters/looping = true
+
+[node name="ColorRect" type="ColorRect" parent="." index="6"]
+offset_left = 3.0
+offset_top = -53.0
+offset_right = 4324.0
+offset_bottom = 108.0
+color = Color(1, 0, 0, 0.35686275)
+
+[node name="Timer" type="Timer" parent="." index="7"]
+wait_time = 6.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

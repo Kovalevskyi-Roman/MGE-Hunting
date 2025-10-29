@@ -20,7 +20,7 @@ func _ready() -> void:
 	$Camera2D.zoom.x = get_window().size.x / 1920.0
 	$Camera2D.zoom.y = $Camera2D.zoom.x
 	state = MOVE
-		
+
 func _physics_process(_delta: float) -> void:
 	match state:
 		MOVE:

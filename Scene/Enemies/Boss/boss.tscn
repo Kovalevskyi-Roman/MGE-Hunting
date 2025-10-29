@@ -1,13 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bc333vro1jksd"]
+[gd_scene load_steps=6 format=3 uid="uid://bc333vro1jksd"]
 
 [ext_resource type="Texture2D" uid="uid://bbf4eeqitcv7c" path="res://Sprites/boss.png" id="1_0e1ay"]
 [ext_resource type="Script" uid="uid://bs4w424jts237" path="res://Scene/Enemies/Boss/boss.gd" id="1_hw1sv"]
 [ext_resource type="AudioStream" uid="uid://b6e4eb8btsjke" path="res://Sounds/Blya.wav" id="3_kjuiy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hafyc"]
-radius = 122.10242
+radius = 106.0
 
-[node name="Boss" type="CharacterBody2D" groups=["Enemies"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hw1sv"]
+radius = 118.016945
+
+[node name="Boss" type="CharacterBody2D" groups=["Boss", "Enemies"]]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_hw1sv")
@@ -20,16 +23,20 @@ texture = ExtResource("1_0e1ay")
 position = Vector2(-1, 18)
 shape = SubResource("CircleShape2D_hafyc")
 
-[node name="Area2D" type="Area2D" parent="." groups=["Enemies"]]
+[node name="Area2D" type="Area2D" parent="." groups=["Boss", "Enemies"]]
 collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, 18)
-shape = SubResource("CircleShape2D_hafyc")
+shape = SubResource("CircleShape2D_hw1sv")
 
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 4.0
+autostart = true
+
+[node name="TrainTimer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -37,4 +44,6 @@ stream = ExtResource("3_kjuiy")
 volume_db = -20.0
 pitch_scale = 0.7
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="TrainTimer" to="." method="_on_train_timer_timeout"]
