@@ -15,6 +15,7 @@ enum states {
 	IDLE,
 	CHASE,
 	ATTACK,
+	SHOOT,
 	DIE
 }
 
@@ -29,7 +30,7 @@ func chase() -> void:
 	var direction: Vector2 = Globals.global_player_pos - global_position
 	velocity = direction.normalized() * move_speed
 
-func attack() -> void:
+func shoot() -> void:
 	for i in range(0, 360, int(360.0 / 18)):
 		var bullet = BULLET.instantiate()
 		bullet.create_angle_bullet(i)
@@ -37,6 +38,9 @@ func attack() -> void:
 		get_tree().current_scene.add_child(bullet)
 	
 	state = states.IDLE
+
+func attack() -> void:
+	pass
 
 func die() -> void:
 	velocity = Vector2.ZERO
@@ -68,9 +72,11 @@ func _physics_process(_delta: float) -> void:
 			chase()
 		states.ATTACK:
 			attack()
+		states.SHOOT:
+			shoot()
 		states.DIE:
 			die()
 	move_and_slide()
 
 func _on_shoot_timer_timeout() -> void:
-	state = states.ATTACK
+	state = states.SHOOT

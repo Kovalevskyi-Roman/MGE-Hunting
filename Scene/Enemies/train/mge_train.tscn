@@ -1,0 +1,101 @@
+[gd_scene load_steps=21 format=3 uid="uid://c60tcdx07gns5"]
+
+[ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base enemy/base_enemy.tscn" id="1_7kq4a"]
+[ext_resource type="Script" uid="uid://cvnkeat7d7yog" path="res://Scene/Enemies/train/mge_train.gd" id="2_kkbeq"]
+[ext_resource type="Texture2D" uid="uid://x1mb4sqt4kl6" path="res://Sprites/train/0-removebg-preview.png" id="2_st604"]
+[ext_resource type="Texture2D" uid="uid://cu66tny6uea7r" path="res://Sprites/train/1-removebg-preview.png" id="3_kkbeq"]
+[ext_resource type="Texture2D" uid="uid://b4fxao5ayoob2" path="res://Sprites/train/2-removebg-preview.png" id="4_doqyo"]
+[ext_resource type="Texture2D" uid="uid://20t7f4rjcchq" path="res://Sprites/train/3-removebg-preview.png" id="5_tywls"]
+[ext_resource type="Texture2D" uid="uid://cpq42h4seb1k" path="res://Sprites/train/4-removebg-preview.png" id="6_hd6o8"]
+[ext_resource type="Texture2D" uid="uid://dxixiwfmb4qc4" path="res://Sprites/train/5-removebg-preview.png" id="7_xkopj"]
+[ext_resource type="Texture2D" uid="uid://rvys4htkuvhp" path="res://Sprites/train/6-removebg-preview.png" id="8_amjr1"]
+[ext_resource type="Texture2D" uid="uid://bwdv3evtohai4" path="res://Sprites/train/7-removebg-preview.png" id="9_jdd6k"]
+[ext_resource type="Texture2D" uid="uid://do8lb5xfi0qbm" path="res://Sprites/train/8-removebg-preview.png" id="10_3b2qq"]
+[ext_resource type="Texture2D" uid="uid://i0ubf00cq8eq" path="res://Sprites/train/9-removebg-preview.png" id="11_txvok"]
+[ext_resource type="Texture2D" uid="uid://b2511i5fjpxs1" path="res://Sprites/train/10-removebg-preview.png" id="12_a34if"]
+[ext_resource type="Texture2D" uid="uid://dpw12hvcrelg4" path="res://Sprites/train/11-removebg-preview.png" id="13_wo4fv"]
+[ext_resource type="Texture2D" uid="uid://it3yan5tmwdm" path="res://Sprites/train/12-removebg-preview.png" id="14_fnbr3"]
+[ext_resource type="Texture2D" uid="uid://cv5c1avxr6xso" path="res://Sprites/train/13-removebg-preview.png" id="15_dxfim"]
+[ext_resource type="Texture2D" uid="uid://bk1cbo3uxtwk0" path="res://Sprites/train/14-removebg-preview.png" id="16_heof0"]
+[ext_resource type="AudioStream" uid="uid://bhk5l1o0vflvt" path="res://Sounds/train_sound_v2.mp3" id="18_doqyo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qwvf2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_st604")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kkbeq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_doqyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tywls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hd6o8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xkopj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_amjr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jdd6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3b2qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_txvok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_a34if")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_wo4fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fnbr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dxfim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_heof0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.5
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_st604"]
+size = Vector2(320, 160)
+
+[node name="MGE Train" instance=ExtResource("1_7kq4a")]
+script = ExtResource("2_kkbeq")
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+scale = Vector2(0.5828876, 0.5828877)
+sprite_frames = SubResource("SpriteFrames_qwvf2")
+autoplay = "default"
+frame = 2
+frame_progress = 0.30364144
+
+[node name="Area2D" parent="." index="3"]
+collision_mask = 3
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-25, 28)
+shape = SubResource("RectangleShape2D_st604")
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("18_doqyo")
+volume_db = -30.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 1500.0
+parameters/looping = true

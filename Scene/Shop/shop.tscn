@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu57l3qrwdasw"]
+
+[ext_resource type="Script" uid="uid://b0b7uh4fv1x26" path="res://Scene/Shop/shop.gd" id="1_7r2k0"]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7r2k0")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="QuitButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 1789.0
+offset_top = 1027.0
+offset_right = 1909.0
+offset_bottom = 1059.0
+text = "Выход"
+
+[node name="ExchangerButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 1789.0
+offset_top = 982.0
+offset_right = 1909.0
+offset_bottom = 1014.0
+text = "Обменник"
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 425.0
+offset_top = 173.6842
+offset_right = 668.0
+offset_bottom = 196.6842
+text = "gjhfdjfsdkjfhsdjfhjsdkfhskjdfhjs"
+
+[connection signal="pressed" from="Panel/QuitButton" to="." method="_on_quit_button_pressed"]
