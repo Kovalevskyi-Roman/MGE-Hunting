@@ -12,7 +12,7 @@ func move_direction(direction: Vector2) -> void:
 	velocity = direction.normalized() * speed
 	
 	if rotation >= PI:
-		$AnimatedSprite2D.flip_v = true
+		$AnimatedSprite2D.flip_v = true		
 
 func move_to_point(point_1: Vector2, point_2: Vector2) -> void:
 	var direction = (point_2 - point_1)

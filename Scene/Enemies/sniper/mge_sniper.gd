@@ -14,15 +14,18 @@ func _physics_process(_delta: float) -> void:
 	super(_delta)
 
 func chase():
-	var direction = Globals.player_pos - position
-	if direction.length() <= shoot_radius or in_attack:
-		state = ATTACK
-		velocity = Vector2.ZERO
+	if died != true:
+		var direction = Globals.player_pos - position
+		if direction.length() <= shoot_radius or in_attack:
+			state = ATTACK
+			velocity = Vector2.ZERO
+		else:
+			velocity = direction.normalized() * speed
 	else:
-		velocity = direction.normalized() * speed
-		
+		velocity = Vector2.ZERO
+				
 func attack():
-	if not in_attack:
+	if not in_attack and died != true:
 		in_attack = true
 		var bullet: EnemieBullet = BULLET.instantiate()
 		bullet.create_bullet($Sprite2D2/Marker2D.global_position)

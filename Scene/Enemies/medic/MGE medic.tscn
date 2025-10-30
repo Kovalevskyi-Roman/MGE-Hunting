@@ -53,6 +53,7 @@ scale = Vector2(1.2, 1.2)
 collision_layer = 16
 collision_mask = 25
 script = ExtResource("2_4wg21")
+speed = 365
 hp = 10
 
 [node name="AnimationPlayer" parent="." index="0"]
