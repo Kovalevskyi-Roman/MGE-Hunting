@@ -10,38 +10,66 @@ var hp: int = 500:
 		if value <= 0:
 			state = states.DIE
 		hp = value
+
 var died = false
 var use_horizontal_trains = true
 var use_vertical_trains = true
 var max_train_count: int = 1
-var idle_time = 2
+var idle_time = 1.5
+var bullet_count = 18
+
+var in_shoot = false
 
 enum states {
-	IDLE,
 	CHASE,
+	SHOOT,
 	DIE
 }
 
-var state: states = states.IDLE
-
-func idle() -> void:
-	velocity = Vector2.ZERO
-	await get_tree().create_timer(idle_time).timeout
-	state = states.CHASE
+var state: states = states.CHASE
 
 func chase() -> void:
 	var direction: Vector2 = Globals.global_player_pos - global_position
 	velocity = direction.normalized() * move_speed
 
 func shoot() -> void:
-	for i in range(0, 360, int(360.0 / 18)):
+	velocity = Vector2.ZERO
+	if in_shoot:
+		return
+	in_shoot = true
+	for i in range(0, 360, int(360.0 / bullet_count)):
 		var bullet = BULLET.instantiate()
 		bullet.create_angle_bullet(i)
 		bullet.global_position = global_position
 		get_tree().current_scene.add_child(bullet)
-	
-	state = states.IDLE
-	
+		
+	await get_tree().create_timer(idle_time).timeout
+	state = states.CHASE
+	in_shoot = false
+
+func double_shoot() -> void:
+	velocity = Vector2.ZERO
+	if in_shoot:
+		return
+	in_shoot = true
+	for i in range(0, 360, int(360.0 / bullet_count)):
+		var bullet = BULLET.instantiate()
+		bullet.create_angle_bullet(i)
+		bullet.global_position = global_position
+		get_tree().current_scene.add_child(bullet)
+
+	velocity = Vector2.ZERO
+	await get_tree().create_timer(0.6).timeout
+	for i in range(0, 360, int(360.0 / bullet_count)):
+		var bullet = BULLET.instantiate()
+		bullet.create_angle_bullet(i + int(360.0 / bullet_count) * 1.45)
+		bullet.global_position = global_position
+		get_tree().current_scene.add_child(bullet)
+		
+	await get_tree().create_timer(idle_time).timeout
+	state = states.CHASE
+	in_shoot = false
+
 func train_horizontal() -> void:
 	var count = randi() % max_train_count + 1
 	for i in range(0, count):
@@ -59,9 +87,7 @@ func train_horizontal() -> void:
 
 		$"../".add_child(train)
 		train.move_to_point(train.global_position, Vector2.ZERO)
-		
-	state = states.IDLE
-	
+
 func train_vertical() -> void:
 	var count = randi() % max_train_count + 1
 	for i in range(0, count):
@@ -79,15 +105,13 @@ func train_vertical() -> void:
 
 		$"../".add_child(train)
 		train.move_to_point(train.global_position, Vector2.ZERO)
-		
-	state = states.IDLE
 
 func die() -> void:
 	velocity = Vector2.ZERO
 	$ShootTimer.stop()
 	if not died:
 		died = true
-		for i in range(0, 360, int(360.0 / 360)):
+		for i in range(0, 360, int(360.0 / 300)):
 			var bullet = BULLET.instantiate()
 			bullet.create_angle_bullet(i)
 			bullet.global_position = global_position
@@ -95,37 +119,42 @@ func die() -> void:
 			
 		$AudioStreamPlayer.play()
 
-func _ready() -> void:
-	state = states.IDLE
-
 func _physics_process(_delta: float) -> void:
 	Globals.enemy_pos = self.position
 	Globals.global_enemy_pos = self.global_position
 	max_train_count = ceil(1000.0 / hp)
-	
+	if max_train_count > 50:
+		max_train_count = 50
+
 	if died:
 		state = states.DIE
 
 	match state:
-		states.IDLE:
-			idle()
 		states.CHASE:
 			chase()
+		states.SHOOT:
+			if hp > 250:
+				shoot()
+			else:
+				double_shoot()
 		states.DIE:
 			die()
+
 	move_and_slide()
 
 func _on_shoot_timer_timeout() -> void:
-	shoot()
+	if died:
+		return
+	state = states.SHOOT
 
 func _on_train_timer_timeout() -> void:
+	if died:
+		return
 	if use_horizontal_trains:
 		train_horizontal()
 	if use_vertical_trains:
 		train_vertical()
 		
-	print(max_train_count)
-
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":

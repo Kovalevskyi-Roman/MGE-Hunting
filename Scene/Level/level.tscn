@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=4 uid="uid://cv38gfqsixue"]
+[gd_scene load_steps=12 format=4 uid="uid://cv38gfqsixue"]
 
 [ext_resource type="PackedScene" uid="uid://cbher3l5w80uh" path="res://Scene/Player/player.tscn" id="1_4jjjg"]
 [ext_resource type="Script" uid="uid://dsajeq31qvha3" path="res://Scene/Level/level.gd" id="1_rereq"]
 [ext_resource type="Texture2D" uid="uid://cwl5h8kp2lyr1" path="res://TileSet/0x72_DungeonTilesetII_v1.7/0x72_DungeonTilesetII_v1.7.png" id="2_x20r8"]
 [ext_resource type="PackedScene" uid="uid://dlxt0hvp8upfk" path="res://Scene/Others/spawner.tscn" id="4_rereq"]
 [ext_resource type="AudioStream" uid="uid://sg3tip0y8psh" path="res://Sounds/joji-tick-tock.mp3" id="5_k1goc"]
-[ext_resource type="PackedScene" uid="uid://bc333vro1jksd" path="res://Scene/Enemies/Boss/boss.tscn" id="5_sseyr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rereq"]
 texture = ExtResource("2_x20r8")
@@ -721,8 +720,6 @@ position = Vector2(1075, 837)
 scale = Vector2(0.7, 0.7)
 
 [node name="Enemies" type="Node2D" parent="."]
-
-[node name="Boss" parent="Enemies" instance=ExtResource("5_sseyr")]
 
 [node name="WaveTimer" type="Timer" parent="."]
 wait_time = 10.0
