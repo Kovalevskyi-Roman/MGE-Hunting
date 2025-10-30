@@ -5,9 +5,6 @@ const BULLET = preload("res://Scene/Bullets/Medic Bullets/medic_bullet.tscn")
 var shoot_radius = 390
 var in_attack = false
 
-func _ready() -> void:
-	speed = 365
-
 func _physics_process(_delta: float) -> void:
 	state = CHASE
 	weapon_rotation()

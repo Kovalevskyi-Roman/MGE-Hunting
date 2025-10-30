@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name BaseEnemie
 
-var speed = 290
+@export var speed = 290
 @onready var die_sound = $AudioStreamPlayer2D
 var died = false
 

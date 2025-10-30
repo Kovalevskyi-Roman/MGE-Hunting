@@ -122,6 +122,7 @@ func die() -> void:
 func _physics_process(_delta: float) -> void:
 	Globals.enemy_pos = self.position
 	Globals.global_enemy_pos = self.global_position
+
 	max_train_count = ceil(1000.0 / hp)
 	if max_train_count > 50:
 		max_train_count = 50
