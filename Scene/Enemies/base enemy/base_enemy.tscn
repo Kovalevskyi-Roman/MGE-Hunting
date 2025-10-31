@@ -27,4 +27,12 @@ volume_db = -20.0
 pitch_scale = 1.1
 panning_strength = 0.23
 
+[node name="Helmet" type="Sprite2D" parent="."]
+visible = false
+
+[node name="Chestplate" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(7.1054274e-15, 20.588236)
+scale = Vector2(1.39, 1.2648529)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
