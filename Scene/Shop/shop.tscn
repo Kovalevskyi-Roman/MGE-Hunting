@@ -167,3 +167,5 @@ offset_bottom = 1379.0
 scale = Vector2(0.088, 0.09)
 theme_override_font_sizes/font_size = 681
 text = "Купить"
+
+[connection signal="button_down" from="Items/1 item/Button" to="." method="_on_button_button_down"]
