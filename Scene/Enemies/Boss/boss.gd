@@ -120,6 +120,7 @@ func die() -> void:
 		$AudioStreamPlayer.play()
 
 func _physics_process(_delta: float) -> void:
+	print(hp)
 	Globals.enemy_pos = self.position
 	Globals.global_enemy_pos = self.global_position
 

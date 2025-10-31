@@ -4,6 +4,7 @@ class_name BaseEnemie
 @export var speed = 290
 @onready var die_sound = $AudioStreamPlayer2D
 var died = false
+var armor_active: bool = false
 
 enum {
 	CHASE,
@@ -33,19 +34,26 @@ func _ready() -> void:
 	$Area2D.add_to_group("Enemies")
 
 func _physics_process(_delta: float) -> void:
+	armor()
 	state = CHASE
 	move_and_slide()
 	Globals.enemy_pos = self.position
 	Globals.global_enemy_pos = self.global_position
+	
+func armor():
+	if Globals.current_wave >= 5:
+		armor_active = true
+		$Helmet.visible = true
+		$Chestplate.visible = true	
 
 func chase():
 	if died != true:
 		var direction = (Globals.player_pos - self.position).normalized()
 		velocity = speed * direction	
-		if direction.x < 0:
-			$Sprite2D.flip_h = true
-		else:
-			$Sprite2D.flip_h = false
+		#if direction.x < 0:
+			#$Sprite2D.flip_h = true
+		#else:
+			#$Sprite2D.flip_h = false
 	else:
 		velocity = Vector2.ZERO
 

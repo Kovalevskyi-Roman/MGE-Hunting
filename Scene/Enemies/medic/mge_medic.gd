@@ -6,6 +6,7 @@ var shoot_radius = 390
 var in_attack = false
 
 func _physics_process(_delta: float) -> void:
+	armor()
 	state = CHASE
 	weapon_rotation()
 	move_and_slide()

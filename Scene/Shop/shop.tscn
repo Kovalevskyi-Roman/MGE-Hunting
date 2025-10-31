@@ -1,43 +1,169 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu57l3qrwdasw"]
+[gd_scene load_steps=4 format=3 uid="uid://cu57l3qrwdasw"]
 
-[ext_resource type="Script" uid="uid://b0b7uh4fv1x26" path="res://Scene/Shop/shop.gd" id="1_7r2k0"]
+[ext_resource type="Texture2D" uid="uid://bdwtieixox5q7" path="res://Sprites/photo_2025-10-26_12-04-28.jpg" id="1_5es7v"]
+[ext_resource type="Script" uid="uid://bar7f7wadjhk2" path="res://Scene/Shop/shop.gd" id="1_7r2k0"]
+[ext_resource type="Texture2D" uid="uid://d218o7m6a08ly" path="res://icon.svg" id="2_nvl5h"]
 
-[node name="Shop" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Shop" type="Node2D"]
 script = ExtResource("1_7r2k0")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+[node name="Phone" type="Sprite2D" parent="."]
+position = Vector2(979.5, 545.75)
+scale = Vector2(1.8083333, 1.0583906)
+texture = ExtResource("1_5es7v")
 
-[node name="QuitButton" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 1789.0
-offset_top = 1027.0
-offset_right = 1909.0
-offset_bottom = 1059.0
-text = "Выход"
+[node name="Items" type="Node2D" parent="."]
+position = Vector2(104, 619)
+scale = Vector2(0.81, 0.81)
 
-[node name="ExchangerButton" type="Button" parent="Panel"]
-layout_mode = 0
-offset_left = 1789.0
-offset_top = 982.0
-offset_right = 1909.0
-offset_bottom = 1014.0
-text = "Обменник"
+[node name="1 item" type="Node2D" parent="Items"]
+scale = Vector2(0.85, 0.85)
 
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 425.0
-offset_top = 173.6842
-offset_right = 668.0
-offset_bottom = 196.6842
-text = "gjhfdjfsdkjfhsdjfhjsdkfhskjdfhjs"
+[node name="Sprite2D" type="Sprite2D" parent="Items/1 item"]
+position = Vector2(351, 272)
+scale = Vector2(2.525, 2.525)
+texture = ExtResource("2_nvl5h")
 
-[connection signal="pressed" from="Panel/QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="Название" type="Label" parent="Items/1 item"]
+offset_left = 165.0
+offset_top = 44.000004
+offset_right = 7857.0
+offset_bottom = 1238.0
+scale = Vector2(0.047624834, 0.04769633)
+theme_override_font_sizes/font_size = 876
+text = "Фембой молочко"
+metadata/_edit_use_anchors_ = true
+
+[node name="Цена" type="Label" parent="Items/1 item"]
+offset_left = 277.0
+offset_top = 105.0
+offset_right = 3099.0
+offset_bottom = 1605.0
+scale = Vector2(0.053126365, 0.053126365)
+theme_override_font_sizes/font_size = 1101
+text = "Цена"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Items/1 item"]
+offset_left = 243.0
+offset_top = 443.0
+offset_right = 2705.0
+offset_bottom = 1379.0
+scale = Vector2(0.088, 0.09)
+theme_override_font_sizes/font_size = 681
+text = "Купить"
+metadata/_edit_use_anchors_ = true
+
+[node name="2 item" type="Node2D" parent="Items"]
+position = Vector2(523.45685, 2.4690552)
+scale = Vector2(0.85, 0.85)
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/2 item"]
+position = Vector2(351, 272)
+scale = Vector2(2.525, 2.525)
+texture = ExtResource("2_nvl5h")
+
+[node name="Название" type="Label" parent="Items/2 item"]
+offset_left = 165.0
+offset_top = 44.000004
+offset_right = 7857.0
+offset_bottom = 1238.0
+scale = Vector2(0.047624834, 0.04769633)
+theme_override_font_sizes/font_size = 876
+text = "Фембой молочко"
+metadata/_edit_use_anchors_ = true
+
+[node name="Цена" type="Label" parent="Items/2 item"]
+offset_left = 277.0
+offset_top = 105.0
+offset_right = 3099.0
+offset_bottom = 1605.0
+scale = Vector2(0.053126365, 0.053126365)
+theme_override_font_sizes/font_size = 1101
+text = "Цена"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Items/2 item"]
+offset_left = 243.0
+offset_top = 443.0
+offset_right = 2705.0
+offset_bottom = 1379.0
+scale = Vector2(0.088, 0.09)
+theme_override_font_sizes/font_size = 681
+text = "Купить"
+metadata/_edit_use_anchors_ = true
+
+[node name="3 item" type="Node2D" parent="Items"]
+position = Vector2(1050.6174, 2.4690552)
+scale = Vector2(0.85, 0.85)
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/3 item"]
+position = Vector2(351, 272)
+scale = Vector2(2.525, 2.525)
+texture = ExtResource("2_nvl5h")
+
+[node name="Название" type="Label" parent="Items/3 item"]
+offset_left = 165.0
+offset_top = 44.000004
+offset_right = 7857.0
+offset_bottom = 1238.0
+scale = Vector2(0.047624834, 0.04769633)
+theme_override_font_sizes/font_size = 876
+text = "Фембой молочко"
+metadata/_edit_use_anchors_ = true
+
+[node name="Цена" type="Label" parent="Items/3 item"]
+offset_left = 277.0
+offset_top = 105.0
+offset_right = 3099.0
+offset_bottom = 1605.0
+scale = Vector2(0.053126365, 0.053126365)
+theme_override_font_sizes/font_size = 1101
+text = "Цена"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="Items/3 item"]
+offset_left = 243.0
+offset_top = 443.0
+offset_right = 2705.0
+offset_bottom = 1379.0
+scale = Vector2(0.088, 0.09)
+theme_override_font_sizes/font_size = 681
+text = "Купить"
+metadata/_edit_use_anchors_ = true
+
+[node name="4 item" type="Node2D" parent="Items"]
+position = Vector2(1566.6667, 2.4690552)
+scale = Vector2(0.85, 0.85)
+
+[node name="Sprite2D" type="Sprite2D" parent="Items/4 item"]
+position = Vector2(351, 272)
+scale = Vector2(2.525, 2.525)
+texture = ExtResource("2_nvl5h")
+
+[node name="Название" type="Label" parent="Items/4 item"]
+offset_left = 165.0
+offset_top = 44.000004
+offset_right = 7857.0
+offset_bottom = 1238.0
+scale = Vector2(0.047624834, 0.04769633)
+theme_override_font_sizes/font_size = 876
+text = "Фембой молочко"
+
+[node name="Цена" type="Label" parent="Items/4 item"]
+offset_left = 277.0
+offset_top = 105.0
+offset_right = 3099.0
+offset_bottom = 1605.0
+scale = Vector2(0.053126365, 0.053126365)
+theme_override_font_sizes/font_size = 1101
+text = "Цена"
+
+[node name="Button" type="Button" parent="Items/4 item"]
+offset_left = 243.0
+offset_top = 443.0
+offset_right = 2705.0
+offset_bottom = 1379.0
+scale = Vector2(0.088, 0.09)
+theme_override_font_sizes/font_size = 681
+text = "Купить"

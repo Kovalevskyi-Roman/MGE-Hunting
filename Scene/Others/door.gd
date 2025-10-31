@@ -9,3 +9,7 @@ func _on_level_wave_start(is_wave_active: bool) -> void:
 		$Closed.visible = false
 		$StaticBody2D/CollisionShape2D.disabled = true
 		$Opened.visible = true
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		get_tree().change_scene_to_file("res://Scene/Shop/shop.tscn")

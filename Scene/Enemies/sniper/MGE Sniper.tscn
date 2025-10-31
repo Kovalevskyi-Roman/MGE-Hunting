@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://ccduntyt3b0ke"]
+[gd_scene load_steps=13 format=3 uid="uid://ccduntyt3b0ke"]
 
 [ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base enemy/base_enemy.tscn" id="1_nktcb"]
 [ext_resource type="Script" uid="uid://c4g03rn5sd75o" path="res://Scene/Enemies/sniper/mge_sniper.gd" id="2_73i0a"]
 [ext_resource type="Texture2D" uid="uid://dunotxscqikov" path="res://Sprites/mge_sniper.png" id="3_c2i13"]
 [ext_resource type="AudioStream" uid="uid://bk63idk3bdgm0" path="res://Sounds/Pedic.wav" id="4_dptpb"]
 [ext_resource type="Texture2D" uid="uid://benl53o08s5wt" path="res://Sprites/sniper_weapon_2.png" id="5_vj1wq"]
+[ext_resource type="Texture2D" uid="uid://bv6rrs1y6u72b" path="res://Sprites/iron_helmet2222.png" id="6_c2i13"]
+[ext_resource type="Texture2D" uid="uid://fqvecq0qn7se" path="res://Sprites/iron_chestplate.png" id="7_dptpb"]
 
 [sub_resource type="Animation" id="Animation_73i0a"]
 length = 0.001
@@ -105,7 +107,7 @@ stream = ExtResource("4_dptpb")
 pitch_scale = 1.0
 
 [node name="Sprite2D2" type="Sprite2D" parent="." index="6"]
-z_index = 1
+z_index = 86
 position = Vector2(-19.002707, 48)
 scale = Vector2(0.276, 0.276)
 texture = ExtResource("5_vj1wq")
@@ -114,3 +116,15 @@ offset = Vector2(157.5, 0)
 [node name="Marker2D" type="Marker2D" parent="Sprite2D2" index="0"]
 position = Vector2(373.19818, -2.4154615)
 scale = Vector2(3.382354, 3.3823533)
+
+[node name="Helmet" parent="." index="7"]
+position = Vector2(5.000001, -43.571434)
+rotation = 0.22514829
+scale = Vector2(0.57, 0.57)
+texture = ExtResource("6_c2i13")
+
+[node name="Chestplate" parent="." index="8"]
+position = Vector2(-2.857143, 2.857143)
+rotation = 0.082167715
+scale = Vector2(1.37, 1.247)
+texture = ExtResource("7_dptpb")
