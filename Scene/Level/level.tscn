@@ -804,8 +804,6 @@ position = Vector2(1070.085, -692.405)
 [node name="WaveMechanics" type="Node2D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="WaveMechanics"]
-scale = Vector2(0, 0)
-transform = Transform2D(0, 0, 0, 0, 0, 0)
 
 [node name="CurrentWave" type="Label" parent="WaveMechanics/CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
