@@ -81,9 +81,9 @@ func train_horizontal() -> void:
 		path.progress_ratio = randf()
 		train.global_position = path.global_position
 		if path.get_parent().name == "HorizontalTop":
-			train.go_to_position = Vector2(train.global_position.x, train.go_to_position.y + 3000)
+			train.go_to_position = Vector2(train.global_position.x, train.go_to_position.y + 1)
 		elif path.get_parent().name == "HorizontalBottom":
-			train.go_to_position = Vector2(train.global_position.x, train.go_to_position.y - 3000)
+			train.go_to_position = Vector2(train.global_position.x, train.go_to_position.y - 1)
 
 		$"../".add_child(train)
 		train.move_to_point(train.global_position, Vector2.ZERO)
@@ -99,9 +99,9 @@ func train_vertical() -> void:
 		path.progress_ratio = randf()
 		train.global_position = path.global_position
 		if path.get_parent().name == "VerticalLeft":
-			train.go_to_position = Vector2(train.go_to_position.x + 3000, train.global_position.y)
+			train.go_to_position = Vector2(train.go_to_position.x + 1, train.global_position.y)
 		elif path.get_parent().name == "VerticalRight":
-			train.go_to_position = Vector2(train.go_to_position.x - 3000, train.global_position.y)
+			train.go_to_position = Vector2(train.go_to_position.x - 1, train.global_position.y)
 
 		$"../".add_child(train)
 		train.move_to_point(train.global_position, Vector2.ZERO)

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name EnemieBullet
 
-var speed = 16
+var speed = 13
 
 func _physics_process(_delta: float) -> void:
 	move_and_collide(velocity)

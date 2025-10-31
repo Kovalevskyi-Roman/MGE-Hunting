@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const BULLET = preload("res://Scene/Bullets/Players Bullets/bullet.tscn")
+const DAKIMAKURA = preload("res://Scene/Bullets/dakimakura/dakimakura.tscn")
 
 enum {
 	MOVE,
@@ -46,6 +47,9 @@ func move_player():
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 		
+	if Input.is_action_just_pressed("throw_dakimakura") and Globals.dakimakura_count > 0:
+		throw_dakimakura()
+		
 	move_and_slide()
 		
 func rotate_player():
@@ -56,6 +60,13 @@ func rotate_player():
 		
 func die_player():
 	queue_free()
+	
+func throw_dakimakura():
+	var dakimakura: Dakimakura = DAKIMAKURA.instantiate()
+	dakimakura.create(rotation)
+	get_tree().current_scene.add_child(dakimakura)
+	
+	Globals.dakimakura_count -= 1
 	
 func shot():
 	var bullet = BULLET.instantiate()

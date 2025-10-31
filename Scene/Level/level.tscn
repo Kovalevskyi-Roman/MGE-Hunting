@@ -769,14 +769,14 @@ autoplay = true
 [node name="TrainSpawn" type="Node2D" parent="."]
 
 [node name="HorizontalTop" type="Path2D" parent="TrainSpawn"]
-position = Vector2(0, -300)
+position = Vector2(0, -1000)
 curve = SubResource("Curve2D_sseyr")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="TrainSpawn/HorizontalTop"]
 position = Vector2(-762, -470)
 
 [node name="VerticalLeft" type="Path2D" parent="TrainSpawn"]
-position = Vector2(-300, 0)
+position = Vector2(-1000, 0)
 curve = SubResource("Curve2D_pwhjf")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="TrainSpawn/VerticalLeft"]
@@ -784,14 +784,14 @@ position = Vector2(-762, -500)
 rotation = 1.5707964
 
 [node name="HorizontalBottom" type="Path2D" parent="TrainSpawn"]
-position = Vector2(0, 300)
+position = Vector2(0, 1000)
 curve = SubResource("Curve2D_mrpwd")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="TrainSpawn/HorizontalBottom"]
 position = Vector2(-762, 2272)
 
 [node name="VerticalRight" type="Path2D" parent="TrainSpawn"]
-position = Vector2(340, 0)
+position = Vector2(1000, 0)
 curve = SubResource("Curve2D_pssmx")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="TrainSpawn/VerticalRight"]
