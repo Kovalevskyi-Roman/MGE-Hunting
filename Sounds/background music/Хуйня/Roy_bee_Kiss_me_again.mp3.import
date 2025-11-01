@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6un5n4dr5q6i"
+path="res://.godot/imported/Roy_bee_Kiss_me_again.mp3-4a2747a39783f50b077cba9e6f25c434.mp3str"
+
+[deps]
+
+source_file="res://Sounds/background music/Хуйня/Roy_bee_Kiss_me_again.mp3"
+dest_files=["res://.godot/imported/Roy_bee_Kiss_me_again.mp3-4a2747a39783f50b077cba9e6f25c434.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

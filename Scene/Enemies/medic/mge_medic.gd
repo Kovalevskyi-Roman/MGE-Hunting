@@ -40,17 +40,8 @@ func attack():
 func weapon_rotation():
 	var direction: Vector2 = (Globals.global_enemy_pos - $Sprite2D2.global_position).normalized()
 	$Sprite2D2.rotation = direction.angle() + deg_to_rad(135)
-	#$Sprite2D2.flip_h = abs($Sprite2D2.rotation) > PI / 2
-	#$Sprite2D2.flip_v = $Sprite2D2.flip_h 
+ 
 	
-func die():
-	died = true	
-	$AnimationPlayer.play("die")
-	if die_sound.playing:
-		return 
-	die_sound.play()
-	await $AnimationPlayer.animation_finished
-	queue_free()
 
 	
 		

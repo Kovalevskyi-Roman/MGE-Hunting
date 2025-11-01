@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6kpmiqkf016c"
+path="res://.godot/imported/poluchi-slashchavyi.mp3-bfcf65671a643be9a2ef6c8eb3993782.mp3str"
+
+[deps]
+
+source_file="res://Sounds/100% пригодится/poluchi-slashchavyi.mp3"
+dest_files=["res://.godot/imported/poluchi-slashchavyi.mp3-bfcf65671a643be9a2ef6c8eb3993782.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d1tc0dmvsh48o"
+path="res://.godot/imported/mge-podrevnik.mp3-6d722d3ab63937a484fe6b461b772d62.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Status sound/mge-podrevnik.mp3"
+dest_files=["res://.godot/imported/mge-podrevnik.mp3-6d722d3ab63937a484fe6b461b772d62.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

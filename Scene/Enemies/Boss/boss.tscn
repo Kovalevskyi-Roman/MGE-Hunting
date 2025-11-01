@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bbf4eeqitcv7c" path="res://Sprites/boss.png" id="1_0e1ay"]
 [ext_resource type="Script" uid="uid://bs4w424jts237" path="res://Scene/Enemies/Boss/boss.gd" id="1_hw1sv"]
-[ext_resource type="AudioStream" uid="uid://b6e4eb8btsjke" path="res://Sounds/Blya.wav" id="3_kjuiy"]
+[ext_resource type="AudioStream" uid="uid://b6e4eb8btsjke" path="res://Sounds/Enemies Sound/Blya.wav" id="3_kjuiy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hafyc"]
 radius = 106.0

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq20pfc8pffy7"]
+
+[ext_resource type="PackedScene" uid="uid://mi2oidb88wdg" path="res://Scene/Лут из врагов/BaseDrop/base_drop.tscn" id="1_kee1u"]
+[ext_resource type="Texture2D" uid="uid://dutgb0dl5nsib" path="res://Sprites/power-pro-cube-whey-protein-banka-1-kg-aloye-300x300-fotor-bg-remover-20251101221151.png" id="2_me1p7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_me1p7"]
+size = Vector2(108, 168)
+
+[node name="Protein" instance=ExtResource("1_kee1u")]
+scale = Vector2(0.85, 0.85)
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.394, 0.394)
+texture = ExtResource("2_me1p7")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_me1p7")

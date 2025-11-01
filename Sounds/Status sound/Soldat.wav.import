@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cooncqnp365xl"
+path="res://.godot/imported/Soldat.wav-f6037d648de29c9355f211cd2bd20f03.sample"
+
+[deps]
+
+source_file="res://Sounds/Status sound/Soldat.wav"
+dest_files=["res://.godot/imported/Soldat.wav-f6037d648de29c9355f211cd2bd20f03.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
