@@ -12,7 +12,7 @@ var enemies: int = 0:
 		Globals.number_of_enemies = enemies
 
 func _ready() -> void:
-	$WaveMechanics/CanvasLayer.scale = Vector2(get_window().size.x / 1920.0, get_window().size.x / 1920.0)
+	$WaveMechanics/CanvasLayer.scale = Vector2(get_window().size.x / 1920.0, get_window().size.y / 1080.0)
 
 func _process(_delta: float) -> void:
 	if $Enemies.get_child_count() or Globals.number_of_enemies > 0:

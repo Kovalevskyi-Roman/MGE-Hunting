@@ -1,171 +1,173 @@
-[gd_scene load_steps=4 format=3 uid="uid://cu57l3qrwdasw"]
+[gd_scene load_steps=9 format=3 uid="uid://cu57l3qrwdasw"]
 
 [ext_resource type="Texture2D" uid="uid://bdwtieixox5q7" path="res://Sprites/photo_2025-10-26_12-04-28.jpg" id="1_5es7v"]
-[ext_resource type="Script" uid="uid://bar7f7wadjhk2" path="res://Scene/Shop/shop.gd" id="1_7r2k0"]
-[ext_resource type="Texture2D" uid="uid://d218o7m6a08ly" path="res://icon.svg" id="2_nvl5h"]
+[ext_resource type="Script" uid="uid://b0b7uh4fv1x26" path="res://Scene/Shop/shop.gd" id="1_7r2k0"]
+[ext_resource type="Texture2D" uid="uid://7fga7lbqq7xi" path="res://Sprites/anime-dakimakura-mahiru.jpg" id="3_nvl5h"]
+[ext_resource type="Texture2D" uid="uid://bc6odg6k52l28" path="res://Sprites/Crossbow.png" id="4_jrkx0"]
+[ext_resource type="Texture2D" uid="uid://benl53o08s5wt" path="res://Sprites/sniper_weapon_2.png" id="5_5d4yr"]
+[ext_resource type="Texture2D" uid="uid://drslf2q4r2vqr" path="res://Sprites/energy_drink.png" id="6_ljipp"]
 
-[node name="Shop" type="Node2D"]
+[sub_resource type="InputEventKey" id="InputEventKey_ljipp"]
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_kdfvd"]
+events = [SubResource("InputEventKey_ljipp")]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_7r2k0")
 
-[node name="Phone" type="Sprite2D" parent="."]
-position = Vector2(979.5, 545.75)
-scale = Vector2(1.8083333, 1.0583906)
+[node name="BackGround" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("1_5es7v")
+expand_mode = 2
 
-[node name="Items" type="Node2D" parent="."]
-position = Vector2(104, 619)
-scale = Vector2(0.81, 0.81)
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_right = 182.0
+offset_bottom = 73.0
+theme_override_font_sizes/font_size = 32
+shortcut = SubResource("Shortcut_kdfvd")
+text = "EXIT"
 
-[node name="1 item" type="Node2D" parent="Items"]
-scale = Vector2(0.85, 0.85)
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 600.0
+offset_right = 1980.0
+offset_bottom = 1080.0
+theme_override_constants/separation = 384
 
-[node name="Sprite2D" type="Sprite2D" parent="Items/1 item"]
-position = Vector2(351, 272)
-scale = Vector2(2.525, 2.525)
-texture = ExtResource("2_nvl5h")
+[node name="Item" type="Control" parent="HBoxContainer"]
+layout_mode = 2
 
-[node name="Название" type="Label" parent="Items/1 item"]
-offset_left = 165.0
-offset_top = 44.000004
-offset_right = 7857.0
-offset_bottom = 1238.0
-scale = Vector2(0.047624834, 0.04769633)
-theme_override_font_sizes/font_size = 876
-text = "Фембой молочко"
-metadata/_edit_use_anchors_ = true
+[node name="Label" type="Label" parent="HBoxContainer/Item"]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 45.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Dakimakura"
+horizontal_alignment = 1
 
-[node name="Цена" type="Label" parent="Items/1 item"]
-offset_left = 277.0
-offset_top = 105.0
-offset_right = 3099.0
-offset_bottom = 1605.0
-scale = Vector2(0.053126365, 0.053126365)
-theme_override_font_sizes/font_size = 1101
-text = "Цена"
-metadata/_edit_use_anchors_ = true
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item"]
+layout_mode = 0
+offset_top = 45.0
+offset_right = 350.0
+offset_bottom = 395.0
+texture = ExtResource("3_nvl5h")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Button" type="Button" parent="Items/1 item"]
-offset_left = 243.0
-offset_top = 443.0
-offset_right = 2705.0
-offset_bottom = 1379.0
-scale = Vector2(0.088, 0.09)
-theme_override_font_sizes/font_size = 681
-text = "Купить"
-metadata/_edit_use_anchors_ = true
+[node name="Button" type="Button" parent="HBoxContainer/Item"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 410.0
+offset_right = 263.0
+offset_bottom = 464.0
+theme_override_font_sizes/font_size = 32
+text = "Buy"
 
-[node name="2 item" type="Node2D" parent="Items"]
-position = Vector2(523.45685, 2.4690552)
-scale = Vector2(0.85, 0.85)
+[node name="Item2" type="Control" parent="HBoxContainer"]
+layout_mode = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Items/2 item"]
-position = Vector2(351, 272)
-scale = Vector2(2.525, 2.525)
-texture = ExtResource("2_nvl5h")
+[node name="Label" type="Label" parent="HBoxContainer/Item2"]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 45.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Анигиляторная пушка"
+horizontal_alignment = 1
 
-[node name="Название" type="Label" parent="Items/2 item"]
-offset_left = 165.0
-offset_top = 44.000004
-offset_right = 7857.0
-offset_bottom = 1238.0
-scale = Vector2(0.047624834, 0.04769633)
-theme_override_font_sizes/font_size = 876
-text = "Фембой молочко"
-metadata/_edit_use_anchors_ = true
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item2"]
+layout_mode = 0
+offset_top = 45.0
+offset_right = 350.0
+offset_bottom = 395.0
+texture = ExtResource("4_jrkx0")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Цена" type="Label" parent="Items/2 item"]
-offset_left = 277.0
-offset_top = 105.0
-offset_right = 3099.0
-offset_bottom = 1605.0
-scale = Vector2(0.053126365, 0.053126365)
-theme_override_font_sizes/font_size = 1101
-text = "Цена"
-metadata/_edit_use_anchors_ = true
+[node name="Button" type="Button" parent="HBoxContainer/Item2"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 410.0
+offset_right = 263.0
+offset_bottom = 464.0
+theme_override_font_sizes/font_size = 32
+text = "Buy"
 
-[node name="Button" type="Button" parent="Items/2 item"]
-offset_left = 243.0
-offset_top = 443.0
-offset_right = 2705.0
-offset_bottom = 1379.0
-scale = Vector2(0.088, 0.09)
-theme_override_font_sizes/font_size = 681
-text = "Купить"
-metadata/_edit_use_anchors_ = true
+[node name="Item3" type="Control" parent="HBoxContainer"]
+layout_mode = 2
 
-[node name="3 item" type="Node2D" parent="Items"]
-position = Vector2(1050.6174, 2.4690552)
-scale = Vector2(0.85, 0.85)
+[node name="Label" type="Label" parent="HBoxContainer/Item3"]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 45.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Бодрящий кабачок"
+horizontal_alignment = 1
 
-[node name="Sprite2D" type="Sprite2D" parent="Items/3 item"]
-position = Vector2(351, 272)
-scale = Vector2(2.525, 2.525)
-texture = ExtResource("2_nvl5h")
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item3"]
+layout_mode = 0
+offset_top = 45.0
+offset_right = 350.0
+offset_bottom = 395.0
+texture = ExtResource("5_5d4yr")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Название" type="Label" parent="Items/3 item"]
-offset_left = 165.0
-offset_top = 44.000004
-offset_right = 7857.0
-offset_bottom = 1238.0
-scale = Vector2(0.047624834, 0.04769633)
-theme_override_font_sizes/font_size = 876
-text = "Фембой молочко"
-metadata/_edit_use_anchors_ = true
+[node name="Button" type="Button" parent="HBoxContainer/Item3"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 410.0
+offset_right = 263.0
+offset_bottom = 464.0
+theme_override_font_sizes/font_size = 32
+text = "Buy"
 
-[node name="Цена" type="Label" parent="Items/3 item"]
-offset_left = 277.0
-offset_top = 105.0
-offset_right = 3099.0
-offset_bottom = 1605.0
-scale = Vector2(0.053126365, 0.053126365)
-theme_override_font_sizes/font_size = 1101
-text = "Цена"
-metadata/_edit_use_anchors_ = true
+[node name="Item4" type="Control" parent="HBoxContainer"]
+layout_mode = 2
 
-[node name="Button" type="Button" parent="Items/3 item"]
-offset_left = 243.0
-offset_top = 443.0
-offset_right = 2705.0
-offset_bottom = 1379.0
-scale = Vector2(0.088, 0.09)
-theme_override_font_sizes/font_size = 681
-text = "Купить"
-metadata/_edit_use_anchors_ = true
+[node name="Label" type="Label" parent="HBoxContainer/Item4"]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 45.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Энергетик"
+horizontal_alignment = 1
 
-[node name="4 item" type="Node2D" parent="Items"]
-position = Vector2(1566.6667, 2.4690552)
-scale = Vector2(0.85, 0.85)
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item4"]
+layout_mode = 0
+offset_top = 45.0
+offset_right = 350.0
+offset_bottom = 395.0
+texture = ExtResource("6_ljipp")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="Sprite2D" type="Sprite2D" parent="Items/4 item"]
-position = Vector2(351, 272)
-scale = Vector2(2.525, 2.525)
-texture = ExtResource("2_nvl5h")
+[node name="Button" type="Button" parent="HBoxContainer/Item4"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 410.0
+offset_right = 263.0
+offset_bottom = 464.0
+theme_override_font_sizes/font_size = 32
+text = "Buy"
 
-[node name="Название" type="Label" parent="Items/4 item"]
-offset_left = 165.0
-offset_top = 44.000004
-offset_right = 7857.0
-offset_bottom = 1238.0
-scale = Vector2(0.047624834, 0.04769633)
-theme_override_font_sizes/font_size = 876
-text = "Фембой молочко"
-
-[node name="Цена" type="Label" parent="Items/4 item"]
-offset_left = 277.0
-offset_top = 105.0
-offset_right = 3099.0
-offset_bottom = 1605.0
-scale = Vector2(0.053126365, 0.053126365)
-theme_override_font_sizes/font_size = 1101
-text = "Цена"
-
-[node name="Button" type="Button" parent="Items/4 item"]
-offset_left = 243.0
-offset_top = 443.0
-offset_right = 2705.0
-offset_bottom = 1379.0
-scale = Vector2(0.088, 0.09)
-theme_override_font_sizes/font_size = 681
-text = "Купить"
-
-[connection signal="button_down" from="Items/1 item/Button" to="." method="_on_button_button_down"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="button_down" from="HBoxContainer/Item/Button" to="." method="_on_button_button_down"]

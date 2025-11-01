@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 var speed = 23
-var damage = 10
 
 func _physics_process(_delta: float) -> void:
 	move_and_collide(velocity)
@@ -11,6 +10,7 @@ func create_bullet(rotation_player):
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	var area_parent = area.get_parent()
+	var damage = Globals.player_damage
 	if area_parent.died == true:
 		return
 	if area_parent.is_in_group("Boss") == false:

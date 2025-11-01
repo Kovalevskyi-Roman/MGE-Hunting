@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://ckxrylimp7ouq" path="res://Scene/Bullets/Dakimakura/dakimakura.gd" id="1_5rs4k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5rs4k"]
-size = Vector2(56, 184)
+size = Vector2(68, 226)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_suaj8"]
-size = Vector2(64, 196)
+size = Vector2(86, 262)
 
 [node name="Dakimakura" type="CharacterBody2D"]
 z_index = 2
@@ -17,9 +17,10 @@ script = ExtResource("1_5rs4k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5rs4k")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.18, 0.18)
+scale = Vector2(0.24, 0.24)
 texture = ExtResource("1_1qd1k")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -34,4 +35,5 @@ wait_time = 4.0
 autostart = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]
