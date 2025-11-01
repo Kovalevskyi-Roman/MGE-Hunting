@@ -1,8 +1,9 @@
 extends Node
 
-var player_pos: Vector2
+var player_pos: Vector2 = Vector2(1075, 837)
 var global_player_pos: Vector2
 var player_damage: int = 10
+var player_speed: int = 460
 var dakimakura_count: int = 0
 
 var number_of_enemies: int 

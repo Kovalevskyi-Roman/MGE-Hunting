@@ -8,6 +8,7 @@ signal wave_start(is_wave_active: bool)
 @onready var anim = $WaveMechanics/AnimationPlayer
 var level_rect: Rect2 = Rect2(Vector2(-882, -505), Vector2(3956, 2810))
 
+
 var enemies: int = 0:
 	set(value):
 		enemies = value
@@ -15,6 +16,7 @@ var enemies: int = 0:
 
 func _ready() -> void:
 	$WaveMechanics/CanvasLayer.scale = Vector2(get_window().size.x / 1920.0, get_window().size.y / 1080.0)
+	$Player.position = Globals.player_pos
 
 func _process(_delta: float) -> void:
 	if $Enemies.get_child_count() or Globals.number_of_enemies > 0:

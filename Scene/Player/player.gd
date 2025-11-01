@@ -9,7 +9,7 @@ enum {
 }
 
 var state = MOVE
-var speed = 460
+var speed = Globals.player_speed
 
 var hp: int = 10:
 	set(value):

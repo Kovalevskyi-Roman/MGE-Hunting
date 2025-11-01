@@ -31,7 +31,8 @@ expand_mode = 2
 
 [node name="ExitButton" type="Button" parent="."]
 layout_mode = 0
-offset_right = 182.0
+offset_left = 1738.0
+offset_right = 1920.0
 offset_bottom = 73.0
 theme_override_font_sizes/font_size = 32
 shortcut = SubResource("Shortcut_kdfvd")
@@ -39,16 +40,22 @@ text = "EXIT"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 60.0
+offset_left = 210.0
 offset_top = 600.0
-offset_right = 1980.0
+offset_right = 2130.0
 offset_bottom = 1080.0
 theme_override_constants/separation = 384
 
 [node name="Item" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/Item"]
+[node name="BG" type="ColorRect" parent="HBoxContainer/Item"]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 472.0
+color = Color(0, 0, 0, 0.8156863)
+
+[node name="Label" type="Label" parent="HBoxContainer/Item/BG"]
 layout_mode = 0
 offset_right = 350.0
 offset_bottom = 45.0
@@ -58,7 +65,7 @@ theme_override_font_sizes/font_size = 32
 text = "Dakimakura"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item/BG"]
 layout_mode = 0
 offset_top = 45.0
 offset_right = 350.0
@@ -67,7 +74,7 @@ texture = ExtResource("3_nvl5h")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Button" type="Button" parent="HBoxContainer/Item"]
+[node name="Button" type="Button" parent="HBoxContainer/Item/BG"]
 layout_mode = 0
 offset_left = 88.0
 offset_top = 410.0
@@ -79,17 +86,23 @@ text = "Buy"
 [node name="Item2" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/Item2"]
+[node name="BG" type="ColorRect" parent="HBoxContainer/Item2"]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 472.0
+color = Color(0, 0, 0, 0.8156863)
+
+[node name="Label" type="Label" parent="HBoxContainer/Item2/BG"]
 layout_mode = 0
 offset_right = 350.0
 offset_bottom = 45.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 32
-text = "Анигиляторная пушка"
+text = "Эстрогенатор 3000"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item2"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item2/BG"]
 layout_mode = 0
 offset_top = 45.0
 offset_right = 350.0
@@ -98,7 +111,7 @@ texture = ExtResource("4_jrkx0")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Button" type="Button" parent="HBoxContainer/Item2"]
+[node name="Button" type="Button" parent="HBoxContainer/Item2/BG"]
 layout_mode = 0
 offset_left = 88.0
 offset_top = 410.0
@@ -110,7 +123,13 @@ text = "Buy"
 [node name="Item3" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/Item3"]
+[node name="BG" type="ColorRect" parent="HBoxContainer/Item3"]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 472.0
+color = Color(0, 0, 0, 0.8156863)
+
+[node name="Label" type="Label" parent="HBoxContainer/Item3/BG"]
 layout_mode = 0
 offset_right = 350.0
 offset_bottom = 45.0
@@ -120,16 +139,18 @@ theme_override_font_sizes/font_size = 32
 text = "Бодрящий кабачок"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item3"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item3/BG"]
 layout_mode = 0
 offset_top = 45.0
 offset_right = 350.0
 offset_bottom = 395.0
+rotation = -0.7853982
+pivot_offset = Vector2(175, 175)
 texture = ExtResource("5_5d4yr")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Button" type="Button" parent="HBoxContainer/Item3"]
+[node name="Button" type="Button" parent="HBoxContainer/Item3/BG"]
 layout_mode = 0
 offset_left = 88.0
 offset_top = 410.0
@@ -141,7 +162,13 @@ text = "Buy"
 [node name="Item4" type="Control" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/Item4"]
+[node name="BG" type="ColorRect" parent="HBoxContainer/Item4"]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 472.0
+color = Color(0, 0, 0, 0.8156863)
+
+[node name="Label" type="Label" parent="HBoxContainer/Item4/BG"]
 layout_mode = 0
 offset_right = 350.0
 offset_bottom = 45.0
@@ -151,7 +178,7 @@ theme_override_font_sizes/font_size = 32
 text = "Энергетик"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item4"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item4/BG"]
 layout_mode = 0
 offset_top = 45.0
 offset_right = 350.0
@@ -160,7 +187,7 @@ texture = ExtResource("6_ljipp")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Button" type="Button" parent="HBoxContainer/Item4"]
+[node name="Button" type="Button" parent="HBoxContainer/Item4/BG"]
 layout_mode = 0
 offset_left = 88.0
 offset_top = 410.0
@@ -169,5 +196,12 @@ offset_bottom = 464.0
 theme_override_font_sizes/font_size = 32
 text = "Buy"
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 122.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 32
+text = "Furry Dollars:"
+
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="button_down" from="HBoxContainer/Item/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="HBoxContainer/Item/BG/Button" to="." method="_on_button_button_down"]

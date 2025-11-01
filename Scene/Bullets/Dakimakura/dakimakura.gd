@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Dakimakura
 
-var friction: float = 0.04
+var friction: float = 0.02
 var speed: int = 20
 var damage: int = 2
 
@@ -16,10 +16,10 @@ func create(player_rotation) -> void:
 
 func _physics_process(_delta: float) -> void:
 	velocity = lerp(velocity, Vector2.ZERO, friction)
-	
+
 	for body in colided_with:
 		body.position += velocity
-	
+
 	move_and_collide(velocity)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -30,7 +30,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			body.hp -= damage
 			velocity = lerp(velocity, Vector2.ZERO, friction)
 		return
-	
+
 	body.queue_free()
 	
 func _on_despawn_timer_timeout() -> void:
