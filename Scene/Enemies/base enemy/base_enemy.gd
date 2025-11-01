@@ -1,6 +1,11 @@
 extends CharacterBody2D
 class_name BaseEnemie
 
+const PROTEIN = preload("res://Scene/Лут из врагов/Protein/protein.tscn")
+const TESTESTERONE = preload("res://Scene/Лут из врагов/Testesterone/testesterone.tscn")
+
+var type_drop = [PROTEIN, TESTESTERONE]
+
 @export var speed = 290
 @onready var die_sound = $AudioStreamPlayer2D
 var died = false
@@ -50,22 +55,24 @@ func chase():
 	if died != true:
 		var direction = (Globals.player_pos - self.position).normalized()
 		velocity = speed * direction	
-		#if direction.x < 0:
-			#$Sprite2D.flip_h = true
-		#else:
-			#$Sprite2D.flip_h = false
 	else:
 		velocity = Vector2.ZERO
 
 func die():
 	died = true	
+	$AnimationPlayer.play("die")
 	if die_sound.playing:
 		return 
 	die_sound.play()
-	await die_sound.finished
-	self.position = Vector2(0, 0)
+	await $AnimationPlayer.animation_finished
+	drop_spawn()
 	queue_free()
 
+func drop_spawn():
+	var drop = type_drop.pick_random().instantiate()
+	drop.position = self.position
+	get_tree().current_scene.add_child(drop)
+	
 func attack():
 	pass
 

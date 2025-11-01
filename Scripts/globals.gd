@@ -14,3 +14,5 @@ var dakimakura_price: int = 2
 var new_gun_price: int = 8
 var kabachok_price: int = 10
 var energy_drink_price: int = 16
+
+var money: int = 0

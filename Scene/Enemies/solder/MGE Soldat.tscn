@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base enemy/base_enemy.tscn" id="1_otsr7"]
 [ext_resource type="Script" uid="uid://djq3yhch08lwg" path="res://Scene/Enemies/solder/mge_soldat.gd" id="2_y50pk"]
 [ext_resource type="Texture2D" uid="uid://6lpjtcfadrqa" path="res://Sprites/MGE Soldat.png" id="3_t1ciq"]
-[ext_resource type="AudioStream" uid="uid://b6e4eb8btsjke" path="res://Sounds/Blya.wav" id="4_mgj7n"]
+[ext_resource type="AudioStream" uid="uid://b6e4eb8btsjke" path="res://Sounds/Enemies Sound/Blya.wav" id="4_mgj7n"]
 [ext_resource type="Texture2D" uid="uid://bv6rrs1y6u72b" path="res://Sprites/iron_helmet2222.png" id="5_y50pk"]
 [ext_resource type="Texture2D" uid="uid://fqvecq0qn7se" path="res://Sprites/iron_chestplate.png" id="6_t1ciq"]
 
@@ -83,7 +83,7 @@ z_index = 3
 scale = Vector2(1.7, 1.7)
 collision_mask = 13
 script = ExtResource("2_y50pk")
-speed = 295
+speed = 330
 
 [node name="AnimationPlayer" parent="." index="0"]
 libraries = {

@@ -18,7 +18,7 @@ func spawn_enemy(_number_of_enemies):
 	if cam == null:
 		return
 
-	var enemy = (type_enemy.pick_random()).instantiate()
+	var enemy = type_enemy.pick_random().instantiate()
 	var camera_pos = cam.global_position
 	var view_size = get_viewport().get_visible_rect().size / cam.zoom
 	var half = view_size * 0.5

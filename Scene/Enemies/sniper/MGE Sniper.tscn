@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base enemy/base_enemy.tscn" id="1_nktcb"]
 [ext_resource type="Script" uid="uid://c4g03rn5sd75o" path="res://Scene/Enemies/sniper/mge_sniper.gd" id="2_73i0a"]
 [ext_resource type="Texture2D" uid="uid://dunotxscqikov" path="res://Sprites/mge_sniper.png" id="3_c2i13"]
-[ext_resource type="AudioStream" uid="uid://bk63idk3bdgm0" path="res://Sounds/Pedic.wav" id="4_dptpb"]
+[ext_resource type="AudioStream" uid="uid://bk63idk3bdgm0" path="res://Sounds/Enemies Sound/Pedic.wav" id="4_dptpb"]
 [ext_resource type="Texture2D" uid="uid://benl53o08s5wt" path="res://Sprites/sniper_weapon_2.png" id="5_vj1wq"]
 [ext_resource type="Texture2D" uid="uid://bv6rrs1y6u72b" path="res://Sprites/iron_helmet2222.png" id="6_c2i13"]
 [ext_resource type="Texture2D" uid="uid://fqvecq0qn7se" path="res://Sprites/iron_chestplate.png" id="7_dptpb"]
@@ -80,7 +80,7 @@ scale = Vector2(1.4, 1.4)
 collision_layer = 64
 collision_mask = 73
 script = ExtResource("2_73i0a")
-speed = 315
+speed = 360
 hp = 20
 
 [node name="AnimationPlayer" parent="." index="0"]

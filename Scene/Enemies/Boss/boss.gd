@@ -1,8 +1,8 @@
 extends CharacterBody2D
 class_name Boss
 
-const BULLET = preload("res://Scene/Bullets/Sniper Bullets/enemie_bullet.tscn")
 const TRAIN = preload("res://Scene/Enemies/train/mge_train.tscn")
+const BULLET = preload("res://Scene/Bullets/Sniper Bullets/enemie_bullet.tscn")
 
 var move_speed: int = 250
 var hp: int = 500:

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://3ku5w7drr4r"]
+
+[ext_resource type="PackedScene" uid="uid://mi2oidb88wdg" path="res://Scene/Лут из врагов/BaseDrop/base_drop.tscn" id="1_k7c86"]
+[ext_resource type="Texture2D" uid="uid://ckmnmctnlhm6" path="res://Sprites/Propharm_tren_a-1000x750-fotor-bg-remover-2025110122402.png" id="2_nr3kg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fma24"]
+size = Vector2(48, 146.29628)
+
+[node name="Testesterone" instance=ExtResource("1_k7c86")]
+scale = Vector2(0.695, 0.695)
+item_price = 5
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.511, 0.511)
+texture = ExtResource("2_nr3kg")
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+scale = Vector2(1.375, 1.08)
+shape = SubResource("RectangleShape2D_fma24")

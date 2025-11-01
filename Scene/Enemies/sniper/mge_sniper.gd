@@ -31,15 +31,6 @@ func attack():
 		bullet.create_bullet($Sprite2D2/Marker2D.global_position)
 		bullet.global_position = $Sprite2D2/Marker2D.global_position
 		get_tree().current_scene.add_child(bullet)
-		await get_tree().create_timer(4).timeout
+		await get_tree().create_timer(0.9).timeout
 		in_attack = false
 		state = CHASE
-
-func die():
-	died = true	
-	$AnimationPlayer.play("die")
-	if die_sound.playing:
-		return 
-	die_sound.play()
-	await $AnimationPlayer.animation_finished
-	queue_free()

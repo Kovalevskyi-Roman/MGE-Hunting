@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base enemy/base_enemy.tscn" id="1_xdfbi"]
 [ext_resource type="Script" uid="uid://lh8y1lo5rxbv" path="res://Scene/Enemies/medic/mge_medic.gd" id="2_4wg21"]
 [ext_resource type="Texture2D" uid="uid://bjieutqv0mwfv" path="res://Sprites/MGE Medic.png" id="2_x3gry"]
-[ext_resource type="AudioStream" uid="uid://btkqhtww1nvjx" path="res://Sounds/Schweine.wav" id="4_h0cqr"]
+[ext_resource type="AudioStream" uid="uid://btkqhtww1nvjx" path="res://Sounds/Enemies Sound/Schweine.wav" id="4_h0cqr"]
 [ext_resource type="Texture2D" uid="uid://bv6rrs1y6u72b" path="res://Sprites/iron_helmet2222.png" id="5_83f56"]
 [ext_resource type="Texture2D" uid="uid://bc6odg6k52l28" path="res://Sprites/Crossbow.png" id="5_h0cqr"]
 [ext_resource type="Texture2D" uid="uid://fqvecq0qn7se" path="res://Sprites/iron_chestplate.png" id="6_qtm8w"]
@@ -55,7 +55,7 @@ scale = Vector2(1.2, 1.2)
 collision_layer = 16
 collision_mask = 25
 script = ExtResource("2_4wg21")
-speed = 365
+speed = 375
 hp = 10
 
 [node name="AnimationPlayer" parent="." index="0"]
