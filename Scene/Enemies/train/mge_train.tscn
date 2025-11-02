@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://it3yan5tmwdm" path="res://Sprites/train/12-removebg-preview.png" id="14_fnbr3"]
 [ext_resource type="Texture2D" uid="uid://cv5c1avxr6xso" path="res://Sprites/train/13-removebg-preview.png" id="15_dxfim"]
 [ext_resource type="Texture2D" uid="uid://bk1cbo3uxtwk0" path="res://Sprites/train/14-removebg-preview.png" id="16_heof0"]
-[ext_resource type="AudioStream" path="res://Sounds/train_sound_v2.mp3" id="18_doqyo"]
+[ext_resource type="AudioStream" uid="uid://bhk5l1o0vflvt" path="res://Sounds/Enemies Sound/train_sound_v2.mp3" id="18_tywls"]
 [ext_resource type="Texture2D" uid="uid://c54bl5ag8012s" path="res://Sprites/arrow.png" id="19_tywls"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qwvf2"]
@@ -95,12 +95,11 @@ position = Vector2(-25, 28)
 shape = SubResource("RectangleShape2D_st604")
 
 [node name="AudioStreamPlayer2D" parent="." index="5"]
-stream = ExtResource("18_doqyo")
-volume_db = -40.0
+stream = ExtResource("18_tywls")
+volume_db = -50.0
 pitch_scale = 1.0
 autoplay = true
 max_distance = 2100.0
-parameters/looping = true
 
 [node name="ColorRect" type="ColorRect" parent="." index="6"]
 offset_left = 3.0

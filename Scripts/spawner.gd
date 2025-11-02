@@ -5,7 +5,7 @@ const ENEMY_SOLDER= preload("res://Scene/Enemies/solder/MGE Soldat.tscn")
 const ENEMY_SNIPER = preload("res://Scene/Enemies/sniper/MGE Sniper.tscn")
 const ENEMY_MEDIC = preload("res://Scene/Enemies/medic/MGE medic.tscn")
 
-var type_enemy = [ENEMY_MEDIC]
+var type_enemy = [ENEMY_SOLDER, ENEMY_SNIPER, ENEMY_SOLDER, ENEMY_SNIPER, ENEMY_MEDIC]
 
 @export var camera_path : NodePath
 @onready var cam: Camera2D = get_node(camera_path)
