@@ -17,10 +17,8 @@ func _process(_delta: float) -> void:
 		$"Music/tick-tock".stop()
 		if $Music/Kiss_me.playing == false:
 			$Music/Kiss_me.play()
-		emit_signal("wave_start", false)	
-	
-	if Input.is_action_just_pressed("TestSpawnWave"):
-		next_wave()
+		emit_signal("wave_start", false)
+		$Button.visible = true
 
 func next_wave():
 	if level_rect.has_point(Globals.player_pos):
@@ -38,7 +36,8 @@ func next_wave():
 			Globals.number_of_enemies = 12
 			var boss = BOSS.instantiate()
 			$Enemies.add_child(boss)
-		
 	
-	
-	
+func _on_button_button_down() -> void:
+	$Button.visible = false
+	$Button/AudioStreamPlayer.play()
+	next_wave()

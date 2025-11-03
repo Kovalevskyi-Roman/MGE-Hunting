@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://s4y86kam2vj0"]
+
+[ext_resource type="Texture2D" uid="uid://bbsogdvhepiu8" path="res://Sprites/MGE brother/MGE sniper.png" id="1_jmnvv"]
+[ext_resource type="Script" uid="uid://drvbaix6wf56y" path="res://Scene/StatusScene/mge_soldier_sprite.gd" id="1_murd3"]
+[ext_resource type="AudioStream" uid="uid://de2miygqqqdvd" path="res://Sounds/Status sound/poluchi-slashchavyi.mp3" id="2_4plrp"]
+
+[node name="MGE sniper status" type="CanvasLayer"]
+script = ExtResource("1_murd3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_4plrp")
+volume_db = -26.0
+autoplay = true
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 1931.0
+offset_bottom = 1088.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(697, 465)
+scale = Vector2(2.52, 2.52)
+texture = ExtResource("1_jmnvv")
