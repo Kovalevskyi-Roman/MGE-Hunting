@@ -5,7 +5,7 @@ const TRAIN = preload("res://Scene/Enemies/train/mge_train.tscn")
 const BULLET = preload("res://Scene/Bullets/Sniper Bullets/enemie_bullet.tscn")
 
 var move_speed: int = 250
-var hp: int = 500:
+var hp: int = 50:
 	set(value):
 		if value <= 0:
 			state = states.DIE
@@ -110,6 +110,9 @@ func die() -> void:
 	velocity = Vector2.ZERO
 	$ShootTimer.stop()
 	$TrainTimer.stop()
+	
+	# суй аваит сюды
+	
 	if not died:
 		died = true
 		var train_top: MGETrain = TRAIN.instantiate()
@@ -122,8 +125,8 @@ func die() -> void:
 		train_left.get_node("ColorRect").visible = false
 		train_right.get_node("ColorRect").visible = false
 
-		const dist = 1200
-		const speed = int(dist / 1.5)
+		const dist = 2000
+		const speed = int(dist / 2)
 		train_top.global_position = Globals.global_player_pos - Vector2(0, dist)
 		train_bottom.global_position = Globals.global_player_pos + Vector2(0, dist)
 		train_left.global_position = Globals.global_player_pos - Vector2(dist, 0)

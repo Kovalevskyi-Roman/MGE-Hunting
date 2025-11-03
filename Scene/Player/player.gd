@@ -63,6 +63,8 @@ func die_player():
 	for c in $"../Enemies".get_children():
 		c.queue_free()
 
+	Globals.player_pos = Vector2(1075, -322.0)
+	position = Vector2(1075, -322.0)
 	queue_free()
 	
 func throw_dakimakura():
