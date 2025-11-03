@@ -7,6 +7,9 @@ var video = [furry_video, imba_video]
 var current_video: int = 0
 
 func _ready() -> void:
+	current_video = randi_range(0, len(video) - 1)
+	$VideoStreamPlayer.stream = video[current_video]
+	$VideoStreamPlayer.play()
 	scale = Vector2(get_window().size.x / 1920.0, get_window().size.y / 1080.0)
 
 	Globals.player_pos = Vector2(1075, -674)

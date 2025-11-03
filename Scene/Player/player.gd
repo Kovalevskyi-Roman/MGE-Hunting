@@ -62,6 +62,7 @@ func rotate_player():
 func die_player():
 	for c in $"../Enemies".get_children():
 		c.queue_free()
+
 	queue_free()
 	
 func throw_dakimakura():

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="MGE hunting"
-run/main_scene="uid://cv38gfqsixue"
+run/main_scene="uid://deuqw3n64q0dh"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0.18717614, 0.18717614, 0.18717614, 1)
 config/icon="res://icon.svg"

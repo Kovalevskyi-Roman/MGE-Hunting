@@ -4,6 +4,11 @@ class_name BaseEnemie
 const PROTEIN = preload("res://Scene/Лут из врагов/Protein/protein.tscn")
 const TESTESTERONE = preload("res://Scene/Лут из врагов/Testesterone/testesterone.tscn")
 
+const SOLDIER_STATUS = preload("res://Scene/StatusScene/mge_soldier_sprite.tscn")
+const SNIPER_STATUS = preload("res://Scene/StatusScene/mge_sniper_status.tscn")
+const ENGINER_STATUS = preload("res://Scene/StatusScene/mge_enginer_status.tscn")
+
+var type_status = [SOLDIER_STATUS, SNIPER_STATUS, ENGINER_STATUS]
 var type_drop = [PROTEIN, PROTEIN, PROTEIN, TESTESTERONE]
 @onready var hit_sound = $HitAudio2D
 
@@ -81,3 +86,6 @@ func attack():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and died != true:
 		body.hp -= 1
+		if body.hp <= 0:
+			var status = type_status.pick_random().instantiate()
+			get_tree().current_scene.add_child(status)

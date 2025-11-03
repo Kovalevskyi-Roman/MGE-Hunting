@@ -1,6 +1,6 @@
 extends Node
 
-var player_pos: Vector2 = Vector2(1075, 837)
+var player_pos: Vector2 = Vector2(1075, -322.0)
 var global_player_pos: Vector2
 var player_damage: int = 10
 var player_speed: int = 460
