@@ -11,10 +11,10 @@ enum {
 var state = MOVE
 var speed = Globals.player_speed
 
-var hp: int = 10:
+var hp: float = 1:
 	set(value):
 		hp = value
-		if hp <= 0:
+		if hp <= 0.0:
 			state = DIE	
 
 func _ready() -> void:
@@ -58,8 +58,10 @@ func rotate_player():
 		rotation_degrees -= 2.7
 	if Input.is_action_pressed("rotate_right"):
 		rotation_degrees += 2.7
-		
+
 func die_player():
+	for c in $"../Enemies".get_children():
+		c.queue_free()
 	queue_free()
 	
 func throw_dakimakura():

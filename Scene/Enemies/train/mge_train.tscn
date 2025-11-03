@@ -74,7 +74,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_st604"]
-size = Vector2(320, 160)
+size = Vector2(286, 160)
 
 [node name="MGE Train" instance=ExtResource("1_7kq4a")]
 script = ExtResource("2_kkbeq")
@@ -91,7 +91,7 @@ frame_progress = 0.30364144
 collision_mask = 3
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(-25, 28)
+position = Vector2(-24, 28)
 shape = SubResource("RectangleShape2D_st604")
 
 [node name="AudioStreamPlayer2D" parent="." index="5"]

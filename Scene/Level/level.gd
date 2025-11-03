@@ -30,15 +30,10 @@ func next_wave():
 		$"Music/tick-tock".play()
 		Globals.current_wave += 1
 		Globals.number_of_enemies = (Globals.current_wave * 4) + 1
-		print(Globals.number_of_enemies)
 		$WaveMechanics/CanvasLayer/CurrentWave.text = "WAVE " + str(Globals.current_wave)
 		anim.play("new_animation")
-		
+
 		if Globals.current_wave == 8:
 			Globals.number_of_enemies = 12
 			var boss = BOSS.instantiate()
 			$Enemies.add_child(boss)
-		
-	
-	
-	

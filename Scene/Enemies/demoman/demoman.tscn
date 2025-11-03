@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base enemy/base_enemy.tscn" id="1_s5j4o"]
 [ext_resource type="Script" uid="uid://41ywm3savkfv" path="res://Scene/Enemies/demoman/demoman.gd" id="2_11l4i"]
-[ext_resource type="Texture2D" uid="uid://cta327k17lpqw" path="res://Sprites/demoman_v2.png" id="3_c33bj"]
+[ext_resource type="Texture2D" uid="uid://b4qb2m8eawthi" path="res://Sprites/demoman.png" id="3_11l4i"]
 [ext_resource type="Texture2D" uid="uid://benl53o08s5wt" path="res://Sprites/sniper_weapon_2.png" id="4_11l4i"]
 
 [sub_resource type="Animation" id="Animation_11l4i"]
@@ -46,7 +46,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_ruiby"]
 resource_name = "attack"
-length = 2.7
+length = 1.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -54,7 +54,7 @@ tracks/0/path = NodePath("../Weapon:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.7, 2.7),
+"times": PackedFloat32Array(0, 0.6, 1.2, 1.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(1, 1e-05), Vector2(1, 1), Vector2(1, 1), Vector2(1, 0)]
@@ -66,7 +66,7 @@ tracks/1/path = NodePath("../Weapon:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.2, 1.5),
+"times": PackedFloat32Array(0.7, 1.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 6.283185307179586]
@@ -101,13 +101,13 @@ radius = 52.0
 size = Vector2(40, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lw4mv"]
-size = Vector2(30.000004, 121.357216)
+size = Vector2(30.000004, 181.35724)
 
 [node name="Demoman" instance=ExtResource("1_s5j4o")]
 scale = Vector2(1.4, 1.4)
 collision_layer = 256
 script = ExtResource("2_11l4i")
-speed = 400
+speed = 560
 hp = 30
 
 [node name="AnimationPlayer" parent="." index="0"]
@@ -116,8 +116,8 @@ libraries = {
 }
 
 [node name="Sprite2D" parent="." index="2"]
-scale = Vector2(0.31137723, 0.31137726)
-texture = ExtResource("3_c33bj")
+scale = Vector2(0.27809522, 0.27809528)
+texture = ExtResource("3_11l4i")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 shape = SubResource("CircleShape2D_11l4i")
@@ -127,20 +127,23 @@ position = Vector2(0, 39)
 shape = SubResource("RectangleShape2D_ruiby")
 
 [node name="Weapon" type="Node2D" parent="." index="8"]
-position = Vector2(0, 42.142853)
+position = Vector2(0, 44)
 scale = Vector2(1, 1e-05)
 
 [node name="Sprite2D" type="Sprite2D" parent="Weapon" index="0"]
+position = Vector2(-1.4737707e-07, 3.371594)
 rotation = 1.5707964
-scale = Vector2(0.276, 0.276)
+scale = Vector2(0.41086376, 0.276)
 texture = ExtResource("4_11l4i")
 offset = Vector2(200, 0)
 
-[node name="Area2D" type="Area2D" parent="Weapon" index="1"]
+[node name="WeaponArea2D" type="Area2D" parent="Weapon" index="1"]
 collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/Area2D" index="0"]
-position = Vector2(0, 55.03571)
-scale = Vector2(0.9999994, 0.9999994)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/WeaponArea2D" index="0"]
+position = Vector2(-7.793698e-06, 85.035706)
+scale = Vector2(0.99999934, 0.99999934)
 shape = SubResource("RectangleShape2D_lw4mv")
+
+[connection signal="body_entered" from="Weapon/WeaponArea2D" to="." method="_on_weapon_area_2d_body_entered"]

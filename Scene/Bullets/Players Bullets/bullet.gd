@@ -23,7 +23,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 			damage = damage - 5
 		
 	if area_parent.is_in_group("Boss"):
-		area_parent.hit_sound.play()
+		#area_parent.hit_sound.play()
 		area_parent.hp -= damage / 2.0
 	elif area_parent.is_in_group("Enemies"):
 		area_parent.hp -= damage

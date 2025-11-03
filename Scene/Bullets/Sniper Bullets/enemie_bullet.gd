@@ -17,5 +17,5 @@ func create_angle_bullet(angle: int):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		body.hp = 0
+		body.hp -= 0.5
 	queue_free()

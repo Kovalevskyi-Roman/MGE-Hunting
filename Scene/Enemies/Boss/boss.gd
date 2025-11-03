@@ -109,14 +109,50 @@ func train_vertical() -> void:
 func die() -> void:
 	velocity = Vector2.ZERO
 	$ShootTimer.stop()
+	$TrainTimer.stop()
 	if not died:
 		died = true
-		for i in range(0, 360, int(360.0 / 300)):
-			var bullet = BULLET.instantiate()
-			bullet.create_angle_bullet(i)
-			bullet.global_position = global_position
-			get_tree().current_scene.add_child(bullet)
-			
+		var train_top: MGETrain = TRAIN.instantiate()
+		var train_bottom: MGETrain = TRAIN.instantiate()
+		var train_left: MGETrain = TRAIN.instantiate()
+		var train_right: MGETrain = TRAIN.instantiate()
+		
+		train_top.get_node("ColorRect").visible = false
+		train_bottom.get_node("ColorRect").visible = false
+		train_left.get_node("ColorRect").visible = false
+		train_right.get_node("ColorRect").visible = false
+
+		const dist = 1200
+		const speed = int(dist / 1.5)
+		train_top.global_position = Globals.global_player_pos - Vector2(0, dist)
+		train_bottom.global_position = Globals.global_player_pos + Vector2(0, dist)
+		train_left.global_position = Globals.global_player_pos - Vector2(dist, 0)
+		train_right.global_position = Globals.global_player_pos + Vector2(dist, 0)
+		
+		train_top.scale = Vector2(3, 3)
+		train_bottom.scale = Vector2(3, 3)
+		train_left.scale = Vector2(3, 3)
+		train_right.scale = Vector2(3, 3)
+		
+		train_top.speed = speed
+		train_bottom.speed = speed
+		train_left.speed = speed
+		train_right.speed = speed
+
+		train_top.move_direction(Vector2(0, 1))
+		train_bottom.move_direction(Vector2(0, -1))
+		train_left.move_direction(Vector2(1, 0))
+		train_right.move_direction(Vector2(-1, 0))
+		
+		for e in $"../".get_children():
+			if e.is_in_group("Boss"):
+				continue
+			e.queue_free()
+		
+		$"../".add_child(train_top)
+		$"../".add_child(train_bottom)
+		$"../".add_child(train_left)
+		$"../".add_child(train_right)
 		$AudioStreamPlayer.play()
 
 func _physics_process(_delta: float) -> void:

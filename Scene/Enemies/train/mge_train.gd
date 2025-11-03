@@ -10,10 +10,11 @@ func _ready() -> void:
 func move_direction(direction: Vector2) -> void:
 	rotation = direction.angle()
 	velocity = direction.normalized() * speed
-	
-	if rotation >= PI:
+
+	if rotation >= PI and not $AnimatedSprite2D.flip_v:
 		$AnimatedSprite2D.flip_v = true
-		$AnimatedSprite2D.offset.y = 97
+		$ColorRect.position.y -= 55
+		$Area2D.position.y -= 55
 
 func move_to_point(point_1: Vector2, point_2: Vector2) -> void:
 	var direction = (point_2 - point_1)
