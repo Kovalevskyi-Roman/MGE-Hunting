@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Dakimakura
 
-var friction: float = 0.02
+var friction: float = 0.012
 var speed: int = 20
 var damage: int = 2
 

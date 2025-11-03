@@ -7,7 +7,7 @@ var player_speed: int = 460
 var player_shoot_speed: float = 0.3
 var dakimakura_count: int = 0
 
-var number_of_enemies: int 
+var number_of_enemies: int = 0
 var enemy_pos: Vector2
 var global_enemy_pos: Vector2
 var current_wave: int

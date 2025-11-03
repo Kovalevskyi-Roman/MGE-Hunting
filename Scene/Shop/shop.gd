@@ -1,5 +1,11 @@
 extends Control
 
+var imba_video = load("res://Sprites/Video/Imba.ogv")
+var furry_video = load("res://Sprites/Video/Furry.ogv")
+
+var video = [furry_video, imba_video]
+var current_video: int = 0
+
 func _ready() -> void:
 	scale = Vector2(get_window().size.x / 1920.0, get_window().size.y / 1080.0)
 
@@ -12,7 +18,7 @@ func _ready() -> void:
 	if Globals.player_damage == 20:
 		$HBoxContainer/Item2.queue_free()
 		
-	if Globals.player_shoot_speed == 0.2:
+	if Globals.player_shoot_speed == 0.22:
 		$HBoxContainer/Item3.queue_free()
 		
 	if Globals.player_speed > 500:
@@ -25,25 +31,51 @@ func _on_button_button_down() -> void:
 	if Globals.money - Globals.dakimakura_price >= 0:
 		Globals.money -= Globals.dakimakura_price
 		Globals.dakimakura_count += 1
+		$AudioStreamPlayer.play()
+	else:
+		$AudioStreamPlayer2.play()
 
 func _on_button_2_button_down() -> void:
 	if Globals.money - Globals.estrogenator_price >= 0:
 		Globals.money -= Globals.estrogenator_price
 		Globals.player_damage = 20
+		$AudioStreamPlayer.play()
 		$HBoxContainer/Item2.queue_free()
+	else:
+		$AudioStreamPlayer2.play()	
 
 func _on_button_3_button_down() -> void:
 	if Globals.money - Globals.kabachok_price >= 0:
 		Globals.money -= Globals.kabachok_price
 		Globals.player_speed += 20
-		Globals.player_shoot_speed = 0.2
+		Globals.player_shoot_speed = 0.22
+		$AudioStreamPlayer.play()
 		$HBoxContainer/Item3.queue_free()
-
+	else:
+		$AudioStreamPlayer2.play()
+		
 func _on_button_4_button_down() -> void:
 	if Globals.money - Globals.energy_drink_price >= 0:
 		Globals.money -= Globals.energy_drink_price
-		Globals.player_speed += 380
+		Globals.player_speed += 170
+		$AudioStreamPlayer.play()
 		$HBoxContainer/Item4.queue_free()
+	else:
+		$AudioStreamPlayer2.play()
 
 func _on_exit_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scene/Level/level.tscn")
+
+func _on_button_next_button_down() -> void:
+	current_video += 1
+	if current_video == len(video):
+		current_video = 0
+	$VideoStreamPlayer.stream = video[current_video]
+	$VideoStreamPlayer.play()
+	
+func _on_video_stream_player_finished() -> void:
+	current_video += 1
+	if current_video == len(video):
+		current_video = 0
+	$VideoStreamPlayer.stream = video[current_video]
+	$VideoStreamPlayer.play()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbher3l5w80uh"]
+[gd_scene load_steps=7 format=3 uid="uid://cbher3l5w80uh"]
 
 [ext_resource type="Script" uid="uid://bupo46k4llvcl" path="res://Scene/Player/player.gd" id="1_67a6e"]
 [ext_resource type="Texture2D" uid="uid://k6r48al3wuax" path="res://Sprites/cropped_circle_image (1).png" id="2_uuj77"]
 [ext_resource type="PackedScene" uid="uid://dc8tbgvb7728y" path="res://Scene/Weapons/weapon.tscn" id="3_uuj77"]
 [ext_resource type="Texture2D" uid="uid://dgkskexfjwmia" path="res://Sprites/pixil-frame-0 (38).png" id="4_g0r71"]
+[ext_resource type="AudioStream" uid="uid://df84fy1lm2r6x" path="res://Sounds/Enviroment Sound/demonstration-shot-from-a-small-caliber-rifle.mp3" id="5_88wa8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g0r71"]
 radius = 66.3402
@@ -42,5 +43,9 @@ autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-43, 157)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_88wa8")
+volume_db = -42.0
 
 [connection signal="timeout" from="ShotTimer" to="." method="_on_shot_timer_timeout"]

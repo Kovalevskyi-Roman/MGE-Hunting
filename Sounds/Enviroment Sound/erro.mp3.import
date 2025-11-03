@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cedwba8iwxiiu"
+path="res://.godot/imported/erro.mp3-da9053516d71d12cef8a3ed3d327c89e.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Enviroment Sound/erro.mp3"
+dest_files=["res://.godot/imported/erro.mp3-da9053516d71d12cef8a3ed3d327c89e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

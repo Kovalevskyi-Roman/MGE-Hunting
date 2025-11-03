@@ -2,6 +2,9 @@ extends CharacterBody2D
 
 var speed = 23
 
+var armor_sound = load("res://Sounds/Enviroment Sound/melee_frying_pan_01.mp3")
+#var meat_sound = load("res://Sounds/Enviroment Sound/hit-right-on-target.mp3")
+
 func _physics_process(_delta: float) -> void:
 	move_and_collide(velocity)
 	
@@ -15,9 +18,12 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		return
 	if area_parent.is_in_group("Boss") == false:
 		if area_parent.armor_active == true:
+			area_parent.hit_sound.stream = armor_sound
+			area_parent.hit_sound.play()
 			damage = damage - 5
-
+		
 	if area_parent.is_in_group("Boss"):
+		area_parent.hit_sound.play()
 		area_parent.hp -= damage / 2.0
 	elif area_parent.is_in_group("Enemies"):
 		area_parent.hp -= damage

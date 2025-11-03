@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cu57l3qrwdasw"]
+[gd_scene load_steps=13 format=3 uid="uid://cu57l3qrwdasw"]
 
 [ext_resource type="Texture2D" uid="uid://bdwtieixox5q7" path="res://Sprites/photo_2025-10-26_12-04-28.jpg" id="1_5es7v"]
 [ext_resource type="Script" uid="uid://b0b7uh4fv1x26" path="res://Scene/Shop/shop.gd" id="1_7r2k0"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://bc6odg6k52l28" path="res://Sprites/Crossbow.png" id="4_jrkx0"]
 [ext_resource type="Texture2D" uid="uid://benl53o08s5wt" path="res://Sprites/sniper_weapon_2.png" id="5_5d4yr"]
 [ext_resource type="Texture2D" uid="uid://drslf2q4r2vqr" path="res://Sprites/energy_drink.png" id="6_ljipp"]
+[ext_resource type="VideoStream" uid="uid://b58yxuydil55i" path="res://Sprites/Video/Furry.ogv" id="7_2wyg6"]
+[ext_resource type="Texture2D" uid="uid://cb28863oejdp0" path="res://Sprites/pngwing.com.png" id="7_kdfvd"]
+[ext_resource type="AudioStream" uid="uid://bloa2rln7lhgm" path="res://Sounds/Enviroment Sound/cash-register-purchase-87313.mp3" id="9_2n4qt"]
+[ext_resource type="AudioStream" uid="uid://cedwba8iwxiiu" path="res://Sounds/Enviroment Sound/erro.mp3" id="10_bgqrs"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_ljipp"]
 keycode = 4194305
@@ -198,13 +202,48 @@ text = "Buy"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 122.0
+offset_right = 208.0
 offset_bottom = 45.0
 theme_override_font_sizes/font_size = 32
 text = "Furry Dollars:"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 161.0
+offset_right = 1425.7534
+offset_bottom = 835.7253
+scale = Vector2(0.365, 0.455)
+stream = ExtResource("7_2wyg6")
+volume_db = -7.0
+autoplay = true
+
+[node name="Телевизор" type="Sprite2D" parent="."]
+position = Vector2(314, 314)
+texture = ExtResource("7_kdfvd")
+
+[node name="ButtonNext" type="Button" parent="."]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 364.0
+offset_right = 952.0
+offset_bottom = 1062.0
+scale = Vector2(0.07999879, 0.07999879)
+theme_override_font_sizes/font_size = 506
+text = "->"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_2n4qt")
+volume_db = -20.0
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_bgqrs")
+volume_db = -30.0
 
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="button_down" from="HBoxContainer/Item/BG/Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="HBoxContainer/Item2/BG/Button2" to="." method="_on_button_2_button_down"]
 [connection signal="button_down" from="HBoxContainer/Item3/BG/Button3" to="." method="_on_button_3_button_down"]
 [connection signal="button_down" from="HBoxContainer/Item4/BG/Button4" to="." method="_on_button_4_button_down"]
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="button_down" from="ButtonNext" to="." method="_on_button_next_button_down"]

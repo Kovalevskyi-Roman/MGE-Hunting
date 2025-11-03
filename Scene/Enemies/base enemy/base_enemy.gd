@@ -4,7 +4,8 @@ class_name BaseEnemie
 const PROTEIN = preload("res://Scene/Лут из врагов/Protein/protein.tscn")
 const TESTESTERONE = preload("res://Scene/Лут из врагов/Testesterone/testesterone.tscn")
 
-var type_drop = [PROTEIN, TESTESTERONE]
+var type_drop = [PROTEIN, PROTEIN, PROTEIN, TESTESTERONE]
+@onready var hit_sound = $HitAudio2D
 
 @export var speed = 290
 @onready var die_sound = $AudioStreamPlayer2D
@@ -20,7 +21,7 @@ enum {
 
 @export var hp: int = 40:
 	set(value):
-		hp = value	
+		hp = value
 		if hp <= 0:
 			state = DIE
 
@@ -69,9 +70,10 @@ func die():
 	queue_free()
 
 func drop_spawn():
-	var drop = type_drop.pick_random().instantiate()
-	drop.position = self.position
-	get_tree().current_scene.add_child(drop)
+	if randi_range(0, 10) >= 5:
+		var drop = type_drop.pick_random().instantiate()
+		drop.position = self.position
+		get_tree().current_scene.add_child(drop)
 	
 func attack():
 	pass

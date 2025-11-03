@@ -105,7 +105,10 @@ size = Vector2(30.000004, 121.357216)
 
 [node name="Demoman" instance=ExtResource("1_s5j4o")]
 scale = Vector2(1.4, 1.4)
+collision_layer = 256
 script = ExtResource("2_11l4i")
+speed = 400
+hp = 30
 
 [node name="AnimationPlayer" parent="." index="0"]
 libraries = {
@@ -134,6 +137,8 @@ texture = ExtResource("4_11l4i")
 offset = Vector2(200, 0)
 
 [node name="Area2D" type="Area2D" parent="Weapon" index="1"]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/Area2D" index="0"]
 position = Vector2(0, 55.03571)

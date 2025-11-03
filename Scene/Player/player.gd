@@ -74,6 +74,7 @@ func shot():
 	bullet.create_bullet(rotation + PI/2)
 	bullet.global_position = $Marker2D.global_position
 	get_tree().current_scene.add_child(bullet)
+	$AudioStreamPlayer2D.play()
 
 func _on_shot_timer_timeout() -> void:
 	shot()
