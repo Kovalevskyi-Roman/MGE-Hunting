@@ -14,6 +14,7 @@ func _ready() -> void:
 		c.queue_free()
 
 func _process(_delta: float) -> void:
+	$Button/Label.text = str(Globals.current_wave) + "/8"
 	if $Enemies.get_child_count() or Globals.number_of_enemies > 0:
 		emit_signal("wave_start", true)
 	else:

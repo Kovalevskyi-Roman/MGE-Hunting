@@ -20,7 +20,7 @@ func _update_shop() -> void:
 	$Panel/Skin.texture = Globals.skins[selected].get("texture")
 	
 	if int(Globals.skins[selected].get("price")):
-		$Panel/Skin.texture = load("res://icon.svg")
+		$Panel/Skin.texture = load("res://2985f9852a9cf6efad70a9b7adbde3d5.jpg")
 
 func _on_buy_button_pressed() -> void:
 	if Globals.global_money - Globals.skins[selected].get("price") >= 0:

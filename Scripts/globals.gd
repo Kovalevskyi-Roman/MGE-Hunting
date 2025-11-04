@@ -13,7 +13,6 @@ var current_wave: int = 0
 
 var dakimakura_price: int = 4
 var estrogenator_price: int = 30
-var estrogenator_5000_price: int = 30
 var kabachok_price: int = 25
 var energy_drink_price: int = 40
 
