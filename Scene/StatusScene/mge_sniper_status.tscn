@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://s4y86kam2vj0"]
+[gd_scene load_steps=5 format=3 uid="uid://s4y86kam2vj0"]
 
 [ext_resource type="Texture2D" uid="uid://bbsogdvhepiu8" path="res://Sprites/MGE brother/MGE sniper.png" id="1_jmnvv"]
 [ext_resource type="Script" uid="uid://drvbaix6wf56y" path="res://Scene/StatusScene/mge_soldier_sprite.gd" id="1_murd3"]
 [ext_resource type="AudioStream" uid="uid://de2miygqqqdvd" path="res://Sounds/Status sound/poluchi-slashchavyi.mp3" id="2_4plrp"]
+[ext_resource type="FontFile" uid="uid://dpi3twifidju7" path="res://Fonts/Pangolin-Regular.ttf" id="3_4832c"]
 
 [node name="MGE sniper status" type="CanvasLayer"]
 script = ExtResource("1_murd3")
@@ -16,7 +17,21 @@ autoplay = true
 offset_right = 1931.0
 offset_bottom = 1088.0
 
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 405.0
+offset_right = 934.0
+offset_bottom = 485.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_4832c")
+theme_override_font_sizes/font_size = 70
+text = "МГЕ Снайпер"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(697, 465)
+position = Vector2(895, 760)
 scale = Vector2(2.52, 2.52)
 texture = ExtResource("1_jmnvv")

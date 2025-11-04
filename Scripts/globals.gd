@@ -18,3 +18,4 @@ var kabachok_price: int = 20
 var energy_drink_price: int = 40
 
 var money: int = 0
+var global_money: int = 0

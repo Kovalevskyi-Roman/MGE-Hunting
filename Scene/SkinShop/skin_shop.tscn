@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=3 uid="uid://coll8bs0es03t"]
+
+[ext_resource type="Script" uid="uid://cwo5nsfa32rj" path="res://Scene/SkinShop/skin_shop.gd" id="1_4vjji"]
+[ext_resource type="FontFile" uid="uid://dpi3twifidju7" path="res://Fonts/Pangolin-Regular.ttf" id="2_if0kg"]
+[ext_resource type="Texture2D" uid="uid://7fga7lbqq7xi" path="res://Sprites/anime-dakimakura-mahiru.jpg" id="3_5tl1g"]
+
+[node name="SkinShop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4vjji")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Caption" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 88.0
+offset_right = 1920.0
+offset_bottom = 187.0
+theme_override_fonts/font = ExtResource("2_if0kg")
+theme_override_font_sizes/font_size = 78
+text = "Skin Shop"
+horizontal_alignment = 1
+
+[node name="SkinTitle" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 730.0
+offset_top = 310.0
+offset_right = 1190.0
+offset_bottom = 355.0
+theme_override_font_sizes/font_size = 32
+text = "Жена"
+horizontal_alignment = 1
+
+[node name="Skin" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 730.0
+offset_top = 368.0
+offset_right = 1190.0
+offset_bottom = 828.0
+texture = ExtResource("3_5tl1g")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Price" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 830.0
+offset_top = 835.0
+offset_right = 1090.0
+offset_bottom = 880.0
+theme_override_font_sizes/font_size = 32
+text = "0$"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuyButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 830.0
+offset_top = 880.0
+offset_right = 1090.0
+offset_bottom = 934.0
+theme_override_font_sizes/font_size = 32
+text = "Купить / Одеть"
+
+[node name="NextButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 1189.0
+offset_top = 808.0
+offset_right = 1369.0
+offset_bottom = 850.0
+theme_override_font_sizes/font_size = 24
+text = "Следующий"
+
+[node name="PreviousButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 808.0
+offset_right = 730.0
+offset_bottom = 850.0
+theme_override_font_sizes/font_size = 24
+text = "Предыдущий"
