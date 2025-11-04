@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b5iaiorvbv41"
+path="res://.godot/imported/orb.mp3-9dba3e1ed319ed23133d330ca457a8f4.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Enviroment Sound/orb.mp3"
+dest_files=["res://.godot/imported/orb.mp3-9dba3e1ed319ed23133d330ca457a8f4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

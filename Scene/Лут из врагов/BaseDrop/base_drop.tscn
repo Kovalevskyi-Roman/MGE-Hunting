@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://mi2oidb88wdg"]
+[gd_scene load_steps=3 format=3 uid="uid://mi2oidb88wdg"]
 
 [ext_resource type="Script" uid="uid://be63dlobfhtrs" path="res://Scene/Лут из врагов/BaseDrop/base_drop.gd" id="1_7tvvg"]
+[ext_resource type="AudioStream" uid="uid://b5iaiorvbv41" path="res://Sounds/Enviroment Sound/orb.mp3" id="2_mwo0k"]
 
 [node name="base_drop" type="Node2D"]
 script = ExtResource("1_7tvvg")
@@ -17,6 +18,10 @@ collision_mask = 2
 [node name="DespawnTimer" type="Timer" parent="."]
 wait_time = 15.0
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_mwo0k")
+volume_db = -25.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]
