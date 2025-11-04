@@ -4,8 +4,8 @@ class_name Boss
 const TRAIN = preload("res://Scene/Enemies/train/mge_train.tscn")
 const BULLET = preload("res://Scene/Bullets/Sniper Bullets/enemie_bullet.tscn")
 
-var move_speed: int = 250
-var hp: int = 50:
+var move_speed: int = 320
+var hp: int = 550:
 	set(value):
 		if value <= 0:
 			state = states.DIE
@@ -111,10 +111,11 @@ func die() -> void:
 	$ShootTimer.stop()
 	$TrainTimer.stop()
 	
-	# суй аваит сюды
-	
 	if not died:
+		if not $AudioStreamPlayer.playing:
+			$AudioStreamPlayer.play()
 		died = true
+		await $AudioStreamPlayer.finished
 		var train_top: MGETrain = TRAIN.instantiate()
 		var train_bottom: MGETrain = TRAIN.instantiate()
 		var train_left: MGETrain = TRAIN.instantiate()
@@ -125,8 +126,8 @@ func die() -> void:
 		train_left.get_node("ColorRect").visible = false
 		train_right.get_node("ColorRect").visible = false
 
-		const dist = 2000
-		const speed = int(dist / 2)
+		const dist = 3000
+		const speed = 1000
 		train_top.global_position = Globals.global_player_pos - Vector2(0, dist)
 		train_bottom.global_position = Globals.global_player_pos + Vector2(0, dist)
 		train_left.global_position = Globals.global_player_pos - Vector2(dist, 0)
@@ -156,16 +157,14 @@ func die() -> void:
 		$"../".add_child(train_bottom)
 		$"../".add_child(train_left)
 		$"../".add_child(train_right)
-		$AudioStreamPlayer.play()
 
 func _physics_process(_delta: float) -> void:
 	Globals.enemy_pos = self.position
 	Globals.global_enemy_pos = self.global_position
 
 	max_train_count = ceil(1000.0 / hp)
-	if max_train_count > 50:
-		max_train_count = 50
-
+	if max_train_count > 12:
+		max_train_count = 12
 	if died:
 		state = states.DIE
 

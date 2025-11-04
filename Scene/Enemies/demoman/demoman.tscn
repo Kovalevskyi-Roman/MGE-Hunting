@@ -1,9 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://cil2pf7a52x5u"]
+[gd_scene load_steps=15 format=3 uid="uid://cil2pf7a52x5u"]
 
 [ext_resource type="PackedScene" uid="uid://b84swngxplb21" path="res://Scene/Enemies/base enemy/base_enemy.tscn" id="1_s5j4o"]
 [ext_resource type="Script" uid="uid://41ywm3savkfv" path="res://Scene/Enemies/demoman/demoman.gd" id="2_11l4i"]
 [ext_resource type="Texture2D" uid="uid://b4qb2m8eawthi" path="res://Sprites/demoman.png" id="3_11l4i"]
+[ext_resource type="AudioStream" uid="uid://4mp784j8lcah" path="res://Sounds/Enemies Sound/demoknights.wav" id="4_002dv"]
 [ext_resource type="Texture2D" uid="uid://benl53o08s5wt" path="res://Sprites/sniper_weapon_2.png" id="4_11l4i"]
+[ext_resource type="Texture2D" uid="uid://bv6rrs1y6u72b" path="res://Sprites/iron_helmet2222.png" id="4_lw4mv"]
+[ext_resource type="Texture2D" uid="uid://fqvecq0qn7se" path="res://Sprites/iron_chestplate.png" id="5_002dv"]
 
 [sub_resource type="Animation" id="Animation_11l4i"]
 length = 0.001
@@ -57,7 +60,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.6, 1.2, 1.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1, 1e-05), Vector2(1, 1), Vector2(1, 1), Vector2(1, 0)]
+"values": [Vector2(1, 1e-05), Vector2(1.355, 1.355), Vector2(1, 1), Vector2(1, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -107,8 +110,8 @@ size = Vector2(30.000004, 181.35724)
 scale = Vector2(1.4, 1.4)
 collision_layer = 256
 script = ExtResource("2_11l4i")
-speed = 560
-hp = 30
+speed = 580
+hp = 35
 
 [node name="AnimationPlayer" parent="." index="0"]
 libraries = {
@@ -125,6 +128,19 @@ shape = SubResource("CircleShape2D_11l4i")
 [node name="CollisionShape2D" parent="." index="4"]
 position = Vector2(0, 39)
 shape = SubResource("RectangleShape2D_ruiby")
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("4_002dv")
+pitch_scale = 1.0
+
+[node name="Helmet" parent="." index="6"]
+position = Vector2(-2.142857, -30.714283)
+texture = ExtResource("4_lw4mv")
+
+[node name="Chestplate" parent="." index="7"]
+position = Vector2(-0.71428573, 20.714285)
+scale = Vector2(1.2692723, 1.1549947)
+texture = ExtResource("5_002dv")
 
 [node name="Weapon" type="Node2D" parent="." index="8"]
 position = Vector2(0, 44)

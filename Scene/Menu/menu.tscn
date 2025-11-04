@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://deuqw3n64q0dh"]
+[gd_scene load_steps=19 format=3 uid="uid://deuqw3n64q0dh"]
 
 [ext_resource type="Script" uid="uid://6h4hyhh0g3n7" path="res://Scene/Menu/main.gd" id="1_qwk0t"]
 [ext_resource type="AudioStream" uid="uid://sg3tip0y8psh" path="res://Sounds/background music/Имба/joji-tick-tock.mp3" id="2_3mj8f"]
+[ext_resource type="Texture2D" uid="uid://bdcll2nygq5mf" path="res://Sprites/pngwing.com (3).png" id="3_3mj8f"]
 [ext_resource type="Texture2D" uid="uid://bb2p0l3yuqljg" path="res://Sprites/MGE brother/инженер-removebg-preview.png" id="3_jh6dy"]
 [ext_resource type="Texture2D" uid="uid://cc114pfn5fgw0" path="res://Sprites/MGE brother/бомбардир-removebg-preview.png" id="4_n4ycw"]
 [ext_resource type="Texture2D" uid="uid://c7vaentxsvfq2" path="res://Sprites/MGE brother/снайпер_2-removebg-preview-removebg-preview.png" id="5_dem1n"]
@@ -210,23 +211,15 @@ vertical_alignment = 1
 
 [node name="PlayButton" type="Button" parent="."]
 z_index = 20
-offset_left = 788.0
-offset_top = 170.0
-offset_right = 1133.0
-offset_bottom = 240.0
+offset_left = 592.0
+offset_top = 182.00002
+offset_right = 2796.2583
+offset_bottom = 958.0
+scale = Vector2(0.21126491, 0.21126491)
 pivot_offset = Vector2(172, 35)
-theme_override_font_sizes/font_size = 42
+theme_override_font_sizes/font_size = 472
 text = "Play"
-
-[node name="SettingsButton" type="Button" parent="."]
-z_index = 20
-offset_left = 788.0
-offset_top = 271.0
-offset_right = 1133.0
-offset_bottom = 341.0
-pivot_offset = Vector2(172, 35)
-theme_override_font_sizes/font_size = 42
-text = "Settings"
+icon = ExtResource("3_3mj8f")
 
 [node name="Sprites" type="Node2D" parent="."]
 position = Vector2(45, -2)
@@ -302,4 +295,3 @@ libraries = {
 autoplay = "4"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]

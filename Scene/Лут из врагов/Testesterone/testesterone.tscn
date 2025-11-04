@@ -8,7 +8,7 @@ size = Vector2(48, 146.29628)
 
 [node name="Testesterone" instance=ExtResource("1_k7c86")]
 scale = Vector2(0.695, 0.695)
-item_price = 5
+item_price = 6
 
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(0.511, 0.511)

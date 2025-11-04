@@ -246,4 +246,4 @@ volume_db = -30.0
 [connection signal="button_down" from="HBoxContainer/Item3/BG/Button3" to="." method="_on_button_3_button_down"]
 [connection signal="button_down" from="HBoxContainer/Item4/BG/Button4" to="." method="_on_button_4_button_down"]
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
-[connection signal="button_down" from="ButtonNext" to="." method="_on_button_next_button_down"]
+[connection signal="pressed" from="ButtonNext" to="." method="_on_button_next_pressed"]

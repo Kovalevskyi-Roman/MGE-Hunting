@@ -3,7 +3,7 @@ extends BaseEnemie
 const BULLET = preload("res://Scene/Bullets/Sniper Bullets/enemie_bullet.tscn")
 const CENSURED_BULLET = preload("res://CensuredVersion/censured_bullet.tscn")
 
-var shoot_radius = 500
+var shoot_radius = 520
 var in_attack = false
 	
 func _physics_process(_delta: float) -> void:
