@@ -9,6 +9,8 @@ func _ready() -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		Globals.money += item_price
+		$Sprite2D.visible = false
+		$AudioStreamPlayer.play()
 		$AnimationPlayer.play("pick_up")
 		await $AnimationPlayer.animation_finished
 		queue_free()

@@ -3,8 +3,8 @@ extends Node2D
 func _ready() -> void:
 	scale = Vector2(get_window().size.x / 1920.0, get_window().size.y / 1080.0)
 	$AnimationPlayer_1.play("1")
-	Globals.money = 0
-	Globals.dakimakura_count = 0
+	Globals.money = 5
+	Globals.dakimakura_count = 1
 	if Globals.current_wave >= 4:
 		if Globals.current_wave >= 7:
 			Globals.current_wave = 6

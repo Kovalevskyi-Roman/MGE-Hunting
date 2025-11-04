@@ -44,9 +44,9 @@ text = "EXIT"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 210.0
+offset_left = 20.0
 offset_top = 600.0
-offset_right = 2130.0
+offset_right = 1940.0
 offset_bottom = 1080.0
 theme_override_constants/separation = 384
 
@@ -116,6 +116,43 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="Button2" type="Button" parent="HBoxContainer/Item2/BG"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 410.0
+offset_right = 263.0
+offset_bottom = 464.0
+theme_override_font_sizes/font_size = 32
+text = "Buy"
+
+[node name="Item5" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="BG" type="ColorRect" parent="HBoxContainer/Item5"]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 472.0
+color = Color(0, 0, 0, 0.8156863)
+
+[node name="Label" type="Label" parent="HBoxContainer/Item5/BG"]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 45.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+text = "Эстрогенатор 5000"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Item5/BG"]
+layout_mode = 0
+offset_top = 45.0
+offset_right = 350.0
+offset_bottom = 395.0
+texture = ExtResource("4_jrkx0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Button5" type="Button" parent="HBoxContainer/Item5/BG"]
 layout_mode = 0
 offset_left = 88.0
 offset_top = 410.0
@@ -243,6 +280,7 @@ volume_db = -30.0
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="button_down" from="HBoxContainer/Item/BG/Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="HBoxContainer/Item2/BG/Button2" to="." method="_on_button_2_button_down"]
+[connection signal="pressed" from="HBoxContainer/Item5/BG/Button5" to="." method="_on_button_5_pressed"]
 [connection signal="button_down" from="HBoxContainer/Item3/BG/Button3" to="." method="_on_button_3_button_down"]
 [connection signal="button_down" from="HBoxContainer/Item4/BG/Button4" to="." method="_on_button_4_button_down"]
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

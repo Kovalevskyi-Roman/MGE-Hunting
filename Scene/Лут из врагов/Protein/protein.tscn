@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cq20pfc8pffy7"]
 
-[ext_resource type="PackedScene" uid="uid://mi2oidb88wdg" path="res://Scene/Лут из врагов/BaseDrop/base_drop.tscn" id="1_kee1u"]
+[ext_resource type="PackedScene" uid="uid://cfc03vll83jn2" path="res://Scene/Лут из врагов/BaseDrop/base_drop.tscn" id="1_kee1u"]
 [ext_resource type="Texture2D" uid="uid://dutgb0dl5nsib" path="res://Sprites/power-pro-cube-whey-protein-banka-1-kg-aloye-300x300-fotor-bg-remover-20251101221151.png" id="2_me1p7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_me1p7"]

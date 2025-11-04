@@ -9,10 +9,11 @@ var dakimakura_count: int = 0
 var number_of_enemies: int = 0
 var enemy_pos: Vector2
 var global_enemy_pos: Vector2
-var current_wave: int
+var current_wave: int = 0
 
 var dakimakura_price: int = 4
 var estrogenator_price: int = 30
+var estrogenator_5000_price: int = 30
 var kabachok_price: int = 25
 var energy_drink_price: int = 40
 

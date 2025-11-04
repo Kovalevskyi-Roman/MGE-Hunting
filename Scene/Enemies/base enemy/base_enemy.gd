@@ -61,6 +61,7 @@ func chase():
 		velocity = Vector2.ZERO
 
 func die():
+	Globals.global_money += 5
 	died = true	
 	$AnimationPlayer.play("die")
 	if die_sound.playing:

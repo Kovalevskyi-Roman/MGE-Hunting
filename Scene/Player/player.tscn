@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cbher3l5w80uh"]
 
 [ext_resource type="Script" uid="uid://bupo46k4llvcl" path="res://Scene/Player/player.gd" id="1_67a6e"]
-[ext_resource type="Texture2D" uid="uid://k6r48al3wuax" path="res://Sprites/cropped_circle_image (1).png" id="2_uuj77"]
+[ext_resource type="Texture2D" uid="uid://k6r48al3wuax" path="res://Sprites/Skins/cropped_circle_image (1).png" id="2_uuj77"]
 [ext_resource type="PackedScene" uid="uid://dc8tbgvb7728y" path="res://Scene/Weapons/weapon.tscn" id="3_uuj77"]
 [ext_resource type="Texture2D" uid="uid://dgkskexfjwmia" path="res://Sprites/pixil-frame-0 (38).png" id="4_g0r71"]
 [ext_resource type="AudioStream" uid="uid://df84fy1lm2r6x" path="res://Sounds/Enviroment Sound/demonstration-shot-from-a-small-caliber-rifle.mp3" id="5_88wa8"]

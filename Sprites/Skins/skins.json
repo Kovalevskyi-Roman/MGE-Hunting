@@ -1,7 +1,47 @@
 [
 	{
-		"name": "Жена 2",
+		"name": "Сосунок",
+		"price": 0,
+		"texture": "cropped_circle_image (1).png"
+	},
+	{
+		"name": "Безумец без очков",
 		"price": 30,
-		"texture": "жена.jpg"
+		"texture": "без очков.png"
+	},
+	{
+		"name": "Безумец Жмурится",
+		"price": 30,
+		"texture": "жмурится.png"
+	},
+	{
+		"name": "Безумец зевает",
+		"price": 30,
+		"texture": "зевает.png"
+	},
+	{
+		"name": "Поляк в очках",
+		"price": 30,
+		"texture": "кирилл в очках.png"
+	},
+	{
+		"name": "Безумец люто зевает",
+		"price": 30,
+		"texture": "люто зевает.png"
+	},
+	{
+		"name": "Тупоглуп",
+		"price": 30,
+		"texture": "Максим.png"
+	},
+	{
+		"name": "Безумный сосун",
+		"price": 30,
+		"texture": "сосет ручку.png"
+	},
+	{
+		"name": "Безумец вырвиглаз",
+		"price": 30,
+		"texture": "чешет глаз.png"
 	}
 ]

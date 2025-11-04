@@ -28,6 +28,8 @@ func _ready() -> void:
 	$ShotTimer.wait_time = Globals.player_shoot_speed
 	state = MOVE
 
+	$Sprite2D.texture = Globals.skins[Globals.current_skin].get("texture")
+
 func _physics_process(_delta: float) -> void:
 	match state:
 		MOVE:

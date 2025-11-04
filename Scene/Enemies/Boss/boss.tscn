@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bc333vro1jksd"]
 
-[ext_resource type="Texture2D" uid="uid://bbf4eeqitcv7c" path="res://Sprites/boss.png" id="1_0e1ay"]
 [ext_resource type="Script" uid="uid://bs4w424jts237" path="res://Scene/Enemies/Boss/boss.gd" id="1_hw1sv"]
+[ext_resource type="Texture2D" uid="uid://biv6xcdgplh4a" path="res://Sprites/БОСС.webp" id="2_hw1sv"]
 [ext_resource type="AudioStream" uid="uid://3uvcrtwostac" path="res://Sounds/Enemies Sound/Босс.wav" id="3_hw1sv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hafyc"]
@@ -17,7 +17,7 @@ script = ExtResource("1_hw1sv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.56, 0.56)
-texture = ExtResource("1_0e1ay")
+texture = ExtResource("2_hw1sv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 18)
