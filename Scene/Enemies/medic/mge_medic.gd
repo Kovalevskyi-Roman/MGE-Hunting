@@ -33,7 +33,7 @@ func attack():
 		bullet.create_bullet($Sprite2D2/Marker2D.global_position)
 		bullet.global_position = $Sprite2D2/Marker2D.global_position
 		get_tree().current_scene.add_child(bullet)
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.7).timeout
 		in_attack = false
 		state = CHASE
 		

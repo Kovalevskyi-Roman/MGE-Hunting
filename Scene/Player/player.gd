@@ -3,11 +3,16 @@ extends CharacterBody2D
 const BULLET = preload("res://Scene/Bullets/Players Bullets/bullet.tscn")
 const DAKIMAKURA = preload("res://Scene/Bullets/dakimakura/dakimakura.tscn")
 
+const SOLDIER_STATUS = preload("res://Scene/StatusScene/mge_soldier_sprite.tscn")
+const SNIPER_STATUS = preload("res://Scene/StatusScene/mge_sniper_status.tscn")
+const ENGINER_STATUS = preload("res://Scene/StatusScene/mge_enginer_status.tscn")
+
 enum {
 	MOVE,
 	DIE
 }
 
+var type_status = [SOLDIER_STATUS, SNIPER_STATUS, ENGINER_STATUS]
 var state = MOVE
 var speed = Globals.player_speed
 
@@ -60,6 +65,8 @@ func rotate_player():
 		rotation_degrees += 2.7
 
 func die_player():
+	var status = type_status.pick_random().instantiate()
+	get_tree().current_scene.add_child(status)
 	for c in $"../Enemies".get_children():
 		c.queue_free()
 

@@ -20,11 +20,11 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		if area_parent.armor_active == true:
 			area_parent.hit_sound.stream = armor_sound
 			area_parent.hit_sound.play()
-			damage = damage - 5
+			damage = damage - 10
 		
 	if area_parent.is_in_group("Boss"):
 		#area_parent.hit_sound.play()
-		area_parent.hp -= damage / 2.0
+		area_parent.hp -= 5
 	elif area_parent.is_in_group("Enemies"):
 		area_parent.hp -= damage
 	else:

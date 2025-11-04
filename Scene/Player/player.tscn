@@ -38,7 +38,7 @@ texture = ExtResource("4_g0r71")
 flip_v = true
 
 [node name="ShotTimer" type="Timer" parent="."]
-wait_time = 0.3
+wait_time = 0.29
 autostart = true
 
 [node name="Marker2D" type="Marker2D" parent="."]

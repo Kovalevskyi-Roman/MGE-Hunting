@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name EnemieBullet
 
-@export var speed = 14
+@export var speed = 15
 
 const SNIPER_STATUS = preload("res://Scene/StatusScene/mge_sniper_status.tscn")
 

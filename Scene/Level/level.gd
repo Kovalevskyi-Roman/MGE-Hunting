@@ -9,6 +9,9 @@ var level_rect: Rect2 = Rect2(Vector2(-882, -505), Vector2(3956, 2810))
 func _ready() -> void:
 	$WaveMechanics/CanvasLayer.scale = Vector2(get_window().size.x / 1920.0, get_window().size.y / 1080.0)
 	$Player.position = Globals.player_pos
+	Globals.number_of_enemies = 0
+	#for c in $"Enemies".get_children():
+	#	c.queue_free()
 
 func _process(_delta: float) -> void:
 	if $Enemies.get_child_count() or Globals.number_of_enemies > 0:
@@ -27,12 +30,14 @@ func next_wave():
 		$Music/Kiss_me.stop()		
 		$"Music/tick-tock".play()
 		Globals.current_wave += 1
-		Globals.number_of_enemies = (Globals.current_wave * 4) + 1
+		Globals.number_of_enemies = Globals.current_wave * 5 + 5
+		if Globals.current_wave == 7:
+			Globals.number_of_enemies += 10
 		$WaveMechanics/CanvasLayer/CurrentWave.text = "WAVE " + str(Globals.current_wave)
 		anim.play("new_animation")
 
 		if Globals.current_wave == 8:
-			Globals.number_of_enemies = 12
+			Globals.number_of_enemies = 15
 			var boss = BOSS.instantiate()
 			$Enemies.add_child(boss)
 
