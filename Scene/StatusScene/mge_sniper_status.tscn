@@ -10,7 +10,7 @@ script = ExtResource("1_murd3")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_4plrp")
-volume_db = -26.0
+volume_db = -30.0
 autoplay = true
 
 [node name="Panel" type="Panel" parent="."]
@@ -27,7 +27,7 @@ theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_4832c")
 theme_override_font_sizes/font_size = 70
-text = "МГЕ Снайпер"
+text = "Получи, слащавый педик."
 horizontal_alignment = 1
 vertical_alignment = 1
 

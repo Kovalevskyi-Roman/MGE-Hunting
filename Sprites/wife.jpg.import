@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7fga7lbqq7xi"
-path="res://.godot/imported/anime-dakimakura-mahiru.jpg-85b8c5d5466b6f00c8a7063347fb67a8.ctex"
+path="res://.godot/imported/wife.jpg-c824ac93be7be6a04e34ab8eb3e111e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/anime-dakimakura-mahiru.jpg"
-dest_files=["res://.godot/imported/anime-dakimakura-mahiru.jpg-85b8c5d5466b6f00c8a7063347fb67a8.ctex"]
+source_file="res://Sprites/wife.jpg"
+dest_files=["res://.godot/imported/wife.jpg-c824ac93be7be6a04e34ab8eb3e111e1.ctex"]
 
 [params]
 

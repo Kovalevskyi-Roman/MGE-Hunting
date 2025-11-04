@@ -15,9 +15,12 @@ func _ready() -> void:
 			Globals.money = 4
 	else:
 		Globals.current_wave = 0
-		
+
 func _on_play_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scene/Level/level.tscn")
 
-func _on_settings_button_pressed() -> void:
-	pass
+func _on_quit_button_pressed() -> void:
+	get_tree().quit(0)
+
+func _on_skin_shop_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scene/SkinShop/skin_shop.tscn")

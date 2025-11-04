@@ -1,8 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://deuqw3n64q0dh"]
+[gd_scene load_steps=20 format=3 uid="uid://deuqw3n64q0dh"]
 
 [ext_resource type="Script" uid="uid://6h4hyhh0g3n7" path="res://Scene/Menu/main.gd" id="1_qwk0t"]
 [ext_resource type="AudioStream" uid="uid://sg3tip0y8psh" path="res://Sounds/background music/Имба/joji-tick-tock.mp3" id="2_3mj8f"]
-[ext_resource type="Texture2D" uid="uid://bdcll2nygq5mf" path="res://Sprites/pngwing.com (3).png" id="3_3mj8f"]
 [ext_resource type="Texture2D" uid="uid://bb2p0l3yuqljg" path="res://Sprites/MGE brother/инженер-removebg-preview.png" id="3_jh6dy"]
 [ext_resource type="Texture2D" uid="uid://cc114pfn5fgw0" path="res://Sprites/MGE brother/бомбардир-removebg-preview.png" id="4_n4ycw"]
 [ext_resource type="Texture2D" uid="uid://c7vaentxsvfq2" path="res://Sprites/MGE brother/снайпер_2-removebg-preview-removebg-preview.png" id="5_dem1n"]
@@ -12,6 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://pf2f7gdpcg43" path="res://Sprites/MGE brother/хеви_2-removebg-preview.png" id="9_v4mmb"]
 [ext_resource type="Texture2D" uid="uid://dnwgvx3yg3sdv" path="res://Sprites/MGE brother/хеви_3-removebg-preview.png" id="10_brv1b"]
 [ext_resource type="Texture2D" uid="uid://clphj4kgagg7p" path="res://Sprites/MGE brother/медик-removebg-preview.png" id="11_fslyn"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_3mj8f"]
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_jh6dy"]
+events = [SubResource("InputEventKey_3mj8f")]
 
 [sub_resource type="Animation" id="Animation_sugp2"]
 resource_name = "1"
@@ -186,7 +191,6 @@ _data = {
 }
 
 [node name="Main" type="Node2D"]
-position = Vector2(0, 75)
 script = ExtResource("1_qwk0t")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -198,9 +202,9 @@ bus = &"Music"
 [node name="Label" type="Label" parent="."]
 z_index = 20
 offset_left = 410.0
-offset_top = 9.0
+offset_top = 84.0
 offset_right = 1510.0
-offset_bottom = 105.0
+offset_bottom = 221.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 4
 theme_override_constants/shadow_offset_y = 3
@@ -212,26 +216,46 @@ vertical_alignment = 1
 [node name="PlayButton" type="Button" parent="."]
 z_index = 20
 offset_left = 592.0
-offset_top = 182.00002
-offset_right = 2796.2583
-offset_bottom = 958.0
+offset_top = 233.0
+offset_right = 2892.0
+offset_bottom = 833.0
 scale = Vector2(0.21126491, 0.21126491)
 pivot_offset = Vector2(172, 35)
-theme_override_font_sizes/font_size = 472
+theme_override_font_sizes/font_size = 400
 text = "Play"
-icon = ExtResource("3_3mj8f")
+
+[node name="SkinShopButton" type="Button" parent="."]
+z_index = 20
+offset_left = 592.0
+offset_top = 378.0
+offset_right = 2892.0
+offset_bottom = 978.0
+scale = Vector2(0.21126491, 0.21126491)
+pivot_offset = Vector2(172, 35)
+theme_override_font_sizes/font_size = 400
+text = "Skin Shop"
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 1751.0
+offset_top = 969.0
+offset_right = 2597.0
+offset_bottom = 1523.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 400
+shortcut = SubResource("Shortcut_jh6dy")
+text = "Quit"
 
 [node name="Sprites" type="Node2D" parent="."]
-position = Vector2(45, -2)
+position = Vector2(45, 73)
 scale = Vector2(1.6400005, 1.6400005)
 
 [node name="Sprite2D_1" type="Sprite2D" parent="Sprites"]
 z_index = 1
-position = Vector2(119.999985, 463)
+position = Vector2(120.12192, 465.85355)
 texture = ExtResource("3_jh6dy")
 
 [node name="Sprite2D_2" type="Sprite2D" parent="Sprites"]
-position = Vector2(314, 468)
+position = Vector2(313.41455, 470.7316)
 scale = Vector2(0.77199996, 0.772)
 texture = ExtResource("4_n4ycw")
 
@@ -249,7 +273,7 @@ flip_h = true
 
 [node name="Sprite2D_5" type="Sprite2D" parent="Sprites"]
 z_index = -1
-position = Vector2(585, 372)
+position = Vector2(584.7559, 376.21936)
 scale = Vector2(1.427411, 1.5701519)
 texture = ExtResource("7_vch4c")
 offset = Vector2(0, 40)
@@ -295,3 +319,5 @@ libraries = {
 autoplay = "4"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="SkinShopButton" to="." method="_on_skin_shop_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

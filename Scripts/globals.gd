@@ -18,3 +18,26 @@ var energy_drink_price: int = 40
 
 var money: int = 0
 var global_money: int = 0
+
+var skins = []
+var current_skin: int = 0
+
+func _ready() -> void:
+	var file = FileAccess.open("res://Sprites/Skins/skins.json", FileAccess.READ)
+
+	if file:
+		var content = file.get_as_text()
+		file.close()
+
+		var result = JSON.parse_string(content)
+		for json_skin in result:
+			var texture_path = str("res://Sprites/Skins/" + json_skin.get("texture"))
+			var texture = load(texture_path)
+			
+			skins.append(
+				{
+					"name": json_skin.get("name"),
+					"texture": texture,
+					"price": json_skin.get("price")
+				}
+			)

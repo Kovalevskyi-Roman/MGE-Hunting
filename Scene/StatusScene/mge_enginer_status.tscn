@@ -10,7 +10,7 @@ script = ExtResource("1_b7h3v")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_b7h3v")
-volume_db = -30.0
+volume_db = -40.0
 autoplay = true
 
 [node name="Panel" type="Panel" parent="."]
@@ -19,17 +19,18 @@ offset_bottom = 1088.0
 
 [node name="Label" type="Label" parent="Panel"]
 layout_mode = 0
-offset_left = 615.0
-offset_top = 340.0
-offset_right = 953.0
-offset_bottom = 414.0
+offset_left = 356.0
+offset_top = 309.0
+offset_right = 1163.0
+offset_bottom = 582.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_w1wv6")
 theme_override_font_sizes/font_size = 70
-text = "МГЕ Инженер"
+text = "Медик, сказал что даст и врот, и в жопу чтобы ты не мучался."
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1558, 729)

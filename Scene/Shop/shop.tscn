@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bdwtieixox5q7" path="res://Sprites/photo_2025-10-26_12-04-28.jpg" id="1_5es7v"]
 [ext_resource type="Script" uid="uid://b0b7uh4fv1x26" path="res://Scene/Shop/shop.gd" id="1_7r2k0"]
-[ext_resource type="Texture2D" uid="uid://7fga7lbqq7xi" path="res://Sprites/anime-dakimakura-mahiru.jpg" id="3_nvl5h"]
+[ext_resource type="Texture2D" uid="uid://7fga7lbqq7xi" path="res://Sprites/wife.jpg" id="3_nvl5h"]
 [ext_resource type="Texture2D" uid="uid://bc6odg6k52l28" path="res://Sprites/Crossbow.png" id="4_jrkx0"]
 [ext_resource type="Texture2D" uid="uid://benl53o08s5wt" path="res://Sprites/sniper_weapon_2.png" id="5_5d4yr"]
 [ext_resource type="Texture2D" uid="uid://drslf2q4r2vqr" path="res://Sprites/energy_drink.png" id="6_ljipp"]
