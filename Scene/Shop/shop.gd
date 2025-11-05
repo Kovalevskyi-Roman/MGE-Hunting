@@ -26,8 +26,8 @@ func _ready() -> void:
 	$HBoxContainer/Item3/BG/Button3.text = "{0}$".format([Globals.kabachok_price])
 	$HBoxContainer/Item4/BG/Button4.text = "{0}$".format([Globals.energy_drink_price])
 	
-	if Globals.player_damage >= 20:
-		$HBoxContainer/Item5.queue_free()
+	#if Globals.player_damage >= 20:
+		#$HBoxContainer/Item5.queue_free()
 		
 	if Globals.player_damage >= 18:
 		$HBoxContainer/Item2.queue_free()
@@ -95,11 +95,11 @@ func _on_button_next_pressed() -> void:
 	$VideoStreamPlayer.stream = video[current_video]
 	$VideoStreamPlayer.play()
 
-func _on_button_5_pressed() -> void:
-	if Globals.money - Globals.estrogenator_5000_price >= 0:
-		Globals.money -= Globals.estrogenator_5000_price
-		Globals.player_damage += 10
-		$AudioStreamPlayer.play()
-		$HBoxContainer/Item3.queue_free()
-	else:
-		$AudioStreamPlayer2.play()
+#func _on_button_5_pressed() -> void:
+	#if Globals.money - Globals.estrogenator_5000_price >= 0:
+		#Globals.money -= Globals.estrogenator_5000_price
+		#Globals.player_damage += 10
+		#$AudioStreamPlayer.play()
+		#$HBoxContainer/Item3.queue_free()
+	#else:
+		#$AudioStreamPlayer2.play()

@@ -46,7 +46,7 @@ text = "EXIT"
 layout_mode = 0
 offset_left = 210.0
 offset_top = 600.0
-offset_right = 1712.265
+offset_right = 1746.0
 offset_bottom = 1080.0
 theme_override_constants/separation = 384
 

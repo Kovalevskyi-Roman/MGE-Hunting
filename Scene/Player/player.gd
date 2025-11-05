@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const BULLET = preload("res://Scene/Bullets/Players Bullets/bullet.tscn")
-const DAKIMAKURA = preload("res://Scene/Bullets/dakimakura/dakimakura.tscn")
+const DAKIMAKURA = preload("res://Scene/Bullets/Dakimakura/dakimakura.tscn")
 
 const SOLDIER_STATUS = preload("res://Scene/StatusScene/mge_soldier_sprite.tscn")
 const SNIPER_STATUS = preload("res://Scene/StatusScene/mge_sniper_status.tscn")
