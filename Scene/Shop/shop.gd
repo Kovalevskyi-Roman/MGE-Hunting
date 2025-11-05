@@ -20,7 +20,7 @@ func _ready() -> void:
 	$VideoStreamPlayer.play()
 	scale = Vector2(get_window().size.x / 1920.0, get_window().size.y / 1080.0)
 
-	Globals.player_pos = Vector2(1075, -674)
+	Globals.player_pos = Vector2(1075, -250)
 	$HBoxContainer/Item/BG/Button.text = "{0}$".format([Globals.dakimakura_price])
 	$HBoxContainer/Item2/BG/Button2.text = "{0}$".format([Globals.estrogenator_price])
 	$HBoxContainer/Item3/BG/Button3.text = "{0}$".format([Globals.kabachok_price])

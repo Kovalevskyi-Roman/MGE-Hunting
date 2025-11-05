@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const BULLET = preload("res://Scene/Bullets/Players Bullets/bullet.tscn")
-const DAKIMAKURA = preload("res://Scene/Bullets/dakimakura/dakimakura.tscn")
+const DAKIMAKURA = preload("res://Scene/Bullets/Dakimakura/dakimakura.tscn")
 
 const SOLDIER_STATUS = preload("res://Scene/StatusScene/mge_soldier_sprite.tscn")
 const SNIPER_STATUS = preload("res://Scene/StatusScene/mge_sniper_status.tscn")
@@ -11,6 +11,9 @@ enum {
 	MOVE,
 	DIE
 }
+
+var rotating_left: bool = false
+var rotating_right: bool = false
 
 var type_status = [SOLDIER_STATUS, SNIPER_STATUS, ENGINER_STATUS]
 var state = MOVE
@@ -37,6 +40,11 @@ func _physics_process(_delta: float) -> void:
 		DIE:
 			die_player()
 	
+	if rotating_left:
+		rotation_degrees -= 2.7
+	if rotating_right:
+		rotation_degrees += 2.7
+		
 	Globals.player_pos = self.position
 	Globals.global_player_pos = self.global_position
 	
@@ -61,10 +69,11 @@ func move_player():
 	move_and_slide()
 		
 func rotate_player():
-	if Input.is_action_pressed("rotate_left"):
-		rotation_degrees -= 2.7
-	if Input.is_action_pressed("rotate_right"):
-		rotation_degrees += 2.7
+	#if Input.is_action_pressed("rotate_left"):
+		#rotation_degrees -= 2.7
+	#if Input.is_action_pressed("rotate_right"):
+		#rotation_degrees += 2.7
+	pass
 
 func die_player():
 	var status = type_status.pick_random().instantiate()
@@ -92,3 +101,15 @@ func shot():
 
 func _on_shot_timer_timeout() -> void:
 	shot()
+
+func _on_left_rotate_pressed() -> void:
+	rotating_left = true
+
+func _on_left_rotate_released() -> void:
+	rotating_left = false
+
+func _on_right_rotate_pressed() -> void:
+	rotating_right = true
+
+func _on_right_rotate_released() -> void:
+	rotating_right = false

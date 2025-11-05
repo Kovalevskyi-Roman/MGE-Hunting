@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cv38gfqsixue"]
+[gd_scene load_steps=21 format=4 uid="uid://cv38gfqsixue"]
 
 [ext_resource type="PackedScene" uid="uid://cbher3l5w80uh" path="res://Scene/Player/player.tscn" id="1_4jjjg"]
 [ext_resource type="Script" uid="uid://dsajeq31qvha3" path="res://Scene/Level/level.gd" id="1_rereq"]
@@ -8,7 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://b6un5n4dr5q6i" path="res://Sounds/background music/Хуйня/Roy_bee_Kiss_me_again.mp3" id="5_sseyr"]
 [ext_resource type="PackedScene" uid="uid://dfslbrpb6oxqb" path="res://Scene/Others/door.tscn" id="7_pwhjf"]
 [ext_resource type="Texture2D" uid="uid://dofv3xehxrw04" path="res://Sprites/pngwing.com (1).png" id="8_mrpwd"]
+[ext_resource type="Texture2D" uid="uid://d218o7m6a08ly" path="res://icon.svg" id="9_m20ue"]
 [ext_resource type="AudioStream" uid="uid://commky5scn5pw" path="res://Sounds/Enviroment Sound/cute-uwu.mp3" id="9_pssmx"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="10_atk2b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rereq"]
 texture = ExtResource("2_x20r8")
@@ -849,6 +851,25 @@ libraries = {
 [node name="WaveTimer" type="Timer" parent="WaveMechanics"]
 wait_time = 10.0
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Virtual Joystick" parent="CanvasLayer" instance=ExtResource("10_atk2b")]
+offset_top = -450.0
+offset_bottom = -150.0
+scale = Vector2(1.425, 1.425)
+action_left = "left"
+action_right = "right"
+action_up = "up"
+action_down = "down"
+
+[node name="LeftRotate" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(1546, 777)
+texture_normal = ExtResource("9_m20ue")
+
+[node name="RightRotate" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(1692, 777)
+texture_normal = ExtResource("9_m20ue")
+
 [node name="Button" type="Button" parent="."]
 z_index = 560
 offset_left = 1197.0
@@ -874,6 +895,10 @@ theme_override_font_sizes/font_size = 391
 horizontal_alignment = 1
 
 [connection signal="wave_start" from="." to="Door" method="_on_level_wave_start"]
+[connection signal="pressed" from="CanvasLayer/LeftRotate" to="Player" method="_on_left_rotate_pressed"]
+[connection signal="released" from="CanvasLayer/LeftRotate" to="Player" method="_on_left_rotate_released"]
+[connection signal="pressed" from="CanvasLayer/RightRotate" to="Player" method="_on_right_rotate_pressed"]
+[connection signal="released" from="CanvasLayer/RightRotate" to="Player" method="_on_right_rotate_released"]
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 
 [editable path="Player"]
